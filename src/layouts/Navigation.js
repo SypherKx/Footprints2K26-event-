@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom";
 import styles from './Navigation.module.scss';
 import cx from 'classnames';
+import { ENABLE_AUTH } from "../config/featureFlags";
 
 const links = [
   { link: '/', name: 'Home', onlyMobile: true },
   { link: '/events', name: 'What\'s on' },
   { link: '/gallery', name: 'Gallery' },
   { link: '/register', name: 'Register' },
-  { link: '/user', name: 'Profile', auth: true },
+  // Profile link only shown when auth is enabled
+  ...(ENABLE_AUTH ? [{ link: '/user', name: 'Profile', auth: true }] : []),
 ]
 
 const NavItem = ({ name, link, handleClick }) => (
