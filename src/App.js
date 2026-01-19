@@ -5,17 +5,6 @@ import Alert from "./components/Alert";
 import { ENABLE_AUTH } from "./config/featureFlags";
 import AnimatedRoutes from "./pages/AnimatedRoutes";
 
-// Conditionally import auth only if enabled
-let auth = null;
-let useAuthStatus = null;
-
-if (ENABLE_AUTH) {
-  const configModule = require("./config/config-dev");
-  const hooksModule = require("./hooks/hooks");
-  auth = configModule.auth;
-  useAuthStatus = hooksModule.useAuthStatus;
-}
-
 // Default auth state when Firebase is disabled
 const defaultAuthState = {
   checkingStatus: false,
@@ -23,19 +12,32 @@ const defaultAuthState = {
   updateAuthUserAttr: () => { }
 };
 
+// Custom hook that handles auth conditionally
+function useAppAuth() {
+  // When auth is disabled, just return defaults
+  if (!ENABLE_AUTH) {
+    return defaultAuthState;
+  }
+
+  // When auth is enabled, dynamically load and use the real hook
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { useAuthStatus } = require("./hooks/hooks");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  return useAuthStatus();
+}
+
 function App() {
-  // Use real auth if enabled, otherwise use default state
-  const authState = ENABLE_AUTH && useAuthStatus ? useAuthStatus() : defaultAuthState;
-  const { checkingStatus, authUser, updateAuthUserAttr } = authState;
+  const { checkingStatus, authUser, updateAuthUserAttr } = useAppAuth();
 
   const [alertMsg, setAlertMsg] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("info");
 
   const handleLogout = (alertMsg, alertType) => {
-    if (!ENABLE_AUTH || !auth) {
+    if (!ENABLE_AUTH) {
       setAlertMsg("Authentication is disabled");
       return;
     }
+    const { auth } = require("./config/config-dev");
     auth.signOut()
       .then(() => {
         if (alertMsg) {

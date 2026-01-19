@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
 import { ENABLE_AUTH } from "../config/featureFlags";
 import Home from "./Home";
 import Events from "./Events";
@@ -22,8 +23,6 @@ if (ENABLE_AUTH) {
   UserProfile = require("./UserProfile").default;
   Admin = require("./Admin").default;
 }
-
-import { AnimatePresence } from 'framer-motion';
 
 function AnimatedRoutes({ authUser, updateAuthUserAttr, handleLogout, checkingStatus }) {
   const location = useLocation();
