@@ -1,9 +1,7 @@
 import styles from '../styles/Footer.module.scss';
-import bye from '../media/bye.png';
 import cx from 'classnames'
-import { ReactComponent as MailIcon } from '../media/icons/mail.svg';
-import { ReactComponent as WAIcon } from '../media/icons/wa.svg';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   const [devTeam, setDevTeam] = useState(false);
@@ -11,41 +9,34 @@ const Footer = () => {
   return (
     <footer className='container'>
       <div className={styles.MainFooterContent}>
-        <div className={cx(styles.footerItems)} id="footerContent">
-          <div className={styles.QuotesContainer}>
-            <div className={styles.quotes}>FOOTPRINTS is a celebration of passion and perseverance, where every match leaves a mark and every player creates a legacy.</div>
-          </div>
-
-          <div>
-            <div className={styles.LogoContainer}>
-              {/* <img src={logo} alt=""></img> */}
-              <div className={styles.title}>FOOTPRINTS'26</div>
-            </div>
-          </div>
-          <div className={styles['sponsor-wrapper']}>
-            <div className={styles.sponsor}>
-              <p style={{ textAlign: "center", fontSize: '1.2rem' }}>Our Sponsors</p>
-              <div className={styles.sponsorImgs}>
-                {/* <img className={styles.sponsors} src={echoOfArunachal} alt=""></img>
-                <img className={styles.sponsors} src={hotelObsidianBlue} alt=""></img> */}
-              </div>
-            </div>
-          </div>
+        {/* Centered Quote */}
+        <div className={styles.quoteSection}>
+          <p className={styles.quote}>
+            FOOTPRINTS is a celebration of passion and perseverance, where every match leaves a mark and every player creates a legacy.
+          </p>
         </div>
-        <div className={styles.footerItems}>
-          <p>Contact us</p>
-          <div style={{ height: '50px' }}></div>{/* Spacer since social links are gone */}
 
-          <div className={styles.thanks}>
-            <span>Thank you</span>
-            <br />
-            <span>for your support</span>
+        {/* Footer Links Section */}
+        <div className={styles.linksSection}>
+          <div className={styles.linkColumn}>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/events">Events</NavLink></li>
+              <li><NavLink to="/gallery">Gallery</NavLink></li>
+              <li><NavLink to="/register">Register</NavLink></li>
+            </ul>
           </div>
-          <div>
-            <img src={bye} style={{ height: "160px", width: "auto" }} alt=""></img>
+          <div className={styles.linkColumn}>
+            <h4>FOOTPRINTS'26</h4>
+            <ul>
+              <li><NavLink to="/sponsors">Our Sponsors</NavLink></li>
+              <li><a href="mailto:footprints@psit.ac.in">Contact Us</a></li>
+            </ul>
           </div>
         </div>
       </div>
+
       <div className={styles.copyright}>
         <div className={styles.team}>
           <span>
