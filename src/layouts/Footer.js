@@ -53,9 +53,7 @@ const Footer = () => {
           <span>by me <a href="https://github.com/SypherKx" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>SypherKx</a></span>
           {devTeam && (
             <ul className={styles.devteam}>
-              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/tripathics">@tripathics</a></li>
-              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/pursottam6003">@pursottam6003</a></li>
-              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/daknya">@daknya</a></li>
+              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/SypherKx">@KaraPratap Singh</a></li>
             </ul>
           )}
         </div>
