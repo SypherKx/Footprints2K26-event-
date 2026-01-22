@@ -3,6 +3,11 @@ import cx from 'classnames';
 import 'react-html5video/dist/styles.css'
 import { motion } from 'framer-motion';
 
+const tags = [
+  'MOMENTS', 'VICTORY', 'PASSION', 'GLORY', 'TEAM', 'SPIRIT', 'ACTION', 'FOCUS',
+  'TRIUMPH', 'RECORDS', 'HISTORY', 'LEGENDS', 'ENERGY', 'MEMORIES', 'CHAMPIONS'
+]
+
 const Gallery = ({ user }) => {
 
   const Video = ({ embedId }) => {
@@ -43,8 +48,17 @@ const Gallery = ({ user }) => {
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       exit={{ scaleX: 0 }}
+      style={{ position: 'relative', overflow: 'hidden' }}
     >
       <header className={cx('page-header', styles['page-header'])}>
+        <div className={styles['intro-bg']}>
+          <div className={styles.rail}>
+            {tags.map((tag, i) => <span key={i}>{tag} </span>)}
+          </div>
+          <div className={styles.rail}>
+            {tags.map((tag, i) => <span key={i}>{tag} </span>)}
+          </div>
+        </div>
         <h1 className='heading'>
           <span>Gallery</span>
         </h1>

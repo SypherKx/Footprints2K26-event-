@@ -33,9 +33,6 @@ const Home = ({ user }) => {
           <div className={styles.rail}>
             {tags.map((tag, i) => <span key={i}>{tag} </span>)}
           </div>
-          <div className={styles.rail}>
-            {tags.map((tag, i) => <span key={i}>{tag} </span>)}
-          </div>
         </div>
         <header className={cx(styles.introContent, styles.sectionHeader, 'container')}>
           <h2 className={styles.heading}>
@@ -72,7 +69,7 @@ const Home = ({ user }) => {
                 <h3 className={styles.cardTitle}>Event Schedule</h3>
                 <div className={styles.cardSubtitle}>
                   <div className={styles.desc}>Check out all events</div>
-                  <ScheduleIcon style={{ width: '2rem', height: '2rem', marginTop: '1rem' }} />
+                  <ScheduleIcon style={{ width: '2rem', height: '2rem', marginTop: '1rem', fill: 'white' }} />
                 </div>
               </main>
               <NavLink to='/events' style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 30 }} />

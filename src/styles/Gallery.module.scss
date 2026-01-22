@@ -95,3 +95,55 @@
         }
     }
 }
+
+.intro-bg {
+    user-select: none;
+    pointer-events: none;
+    overflow-y: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --heading-font-size: 11vw;
+    font-size: calc(1.4 * var(--heading-font-size));
+    white-space: nowrap;
+    font-family: 'Antonio', sans-serif;
+    letter-spacing: -0.18ch;
+    text-transform: uppercase;
+    z-index: 0;
+    // opacity: 0.15; // Removed opacity as Home doesn't use it on the container
+
+    .rail {
+        position: absolute;
+        height: calc(1.4 * var(--heading-font-size));
+        line-height: 0.8;
+    }
+
+    // Match Home colors
+    .rail:nth-child(1) {
+        color: #dadada;
+        top: 20%;
+        animation: 140s infinite linear marquee;
+    }
+
+    .rail:nth-child(2) {
+        color: #dadada;
+        top: 60%;
+        animation: 120s infinite linear marquee;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media screen and (max-width: 999px) {
+        --heading-font-size: 20vw;
+    }
+}

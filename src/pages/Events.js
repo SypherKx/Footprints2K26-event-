@@ -5,7 +5,7 @@ import { events } from '../data/data';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import SupportLink from '../components/SupportLink';
-import { ReactComponent as LinkIcon } from '../media/icons/link.svg';
+import { ReactComponent as RegisterIcon } from '../media/icons/register.svg';
 
 const timeCompare = (a, b) => {
   if (events[a].time < events[b].time) {
@@ -66,10 +66,10 @@ const Events = ({ user }) => {
           <span>Schedule</span>
         </h1>
         <div className={cx(styles['header-btn-wrapper'])}>
-          <NavLink to='/gallery' className={cx('btn', styles['intro-header-btn'])}>
-            <span className={cx('btn-subtitle', styles['intro-btn-subtitle'])}>FOOTPRINTS'26 in reels</span>
-            <span className={cx('btn-text', styles['intro-btn-text'])}>Gallery</span>
-            <LinkIcon />
+          <NavLink to='/register' className={cx('btn', styles['intro-header-btn'])}>
+            <span className={cx('btn-subtitle', styles['intro-btn-subtitle'])}>Registrations Open</span>
+            <span className={cx('btn-text', styles['intro-btn-text'])}>Register Now</span>
+            <RegisterIcon />
           </NavLink>
         </div>
         <div className={cx('subtitle', styles['header-subtitle'])}>

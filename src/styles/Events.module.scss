@@ -147,6 +147,7 @@
                     font-size: 1.3125rem;
                     font-weight: 700;
                     line-height: 1.04;
+
                     .time {
                         transition: 0.3s cubic-bezier(.86, 0, .07, .995);
                     }
@@ -160,6 +161,7 @@
                             margin-bottom: 0.25rem;
                             color: black;
                         }
+
                         .closed {
                             color: #777;
                         }
@@ -202,6 +204,7 @@
                         color: #222;
                     }
                 }
+
                 .event-li-inner:hover::before {
                     height: 100%;
                 }
@@ -285,6 +288,7 @@
                 padding-left: calc((100vw - 9.375rem) * 4/14 + 3.125rem);
                 margin-left: -.625rem;
             }
+
             .event-figures {
                 display: flex;
             }
@@ -295,11 +299,13 @@
     (max-width: 999px) {
         .event-list-wrapper .event-list .event-li .event-li-inner {
             font-size: 1.2rem;
+
             .venue {
                 text-align: left;
                 font-weight: 400;
                 font-size: 1rem;
             }
+
             .title {
                 padding-top: 1rem;
                 padding-bottom: .625rem;

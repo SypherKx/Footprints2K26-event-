@@ -5,7 +5,7 @@ import { ENABLE_AUTH } from "../config/featureFlags";
 
 const links = [
   { link: '/', name: 'Home', onlyMobile: true },
-  { link: '/events', name: 'What\'s on' },
+  { link: '/events', name: 'Schedule' },
   { link: '/gallery', name: 'Gallery' },
   { link: '/register', name: 'Register' },
   { link: '/sponsors', name: 'Sponsors' },
