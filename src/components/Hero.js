@@ -4,7 +4,7 @@ import HeroVideo from '../media/hero-video-2026.mp4';
 import HeroImage from '../media/hero-image.png';
 import FootprintsLogo from '../media/footprints-font.webp';
 import PsitLogo from '../media/psit-logo.png';
-import Logo2K26 from '../media/2k26-logo.webp';
+import Logo2K26 from '../media/2k26-stylized.png';
 import styles from './Hero.module.scss';
 
 const Hero = () => {

@@ -5,8 +5,22 @@
     --li-time-width: 100%;
 
     .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         @media screen and (max-width: 699px) {
-            height: 100vh;
+            height: auto; // Allow height to adjust content
+            min-height: 50vh;
+        }
+
+        .gallery-heading {
+            font-size: 15vw;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20vw; // Ensure it fits evenly
+                margin-top: 4rem;
+            }
         }
     }
 
@@ -118,6 +132,7 @@
         position: absolute;
         height: calc(1.4 * var(--heading-font-size));
         line-height: 0.8;
+        opacity: 0.8; // Reduced transparency by 20% as requested
     }
 
     // Match Home colors

@@ -1,4 +1,4 @@
-export const eventStartDate = 'Feb 23, 2026 10:00:00';
+export const eventStartDate = 'Feb 16, 2026 10:00:00';
 
 export const coordinators = [
   { name: 'Likha Tassam', roll: 'CSE/20/04', phone: '6033936115', email: 'likhatassam1@gmail.com' },
@@ -144,19 +144,19 @@ export const events = {
   'slow_cycling_r2': { id: 'slow_cycling_r2', title: 'Slow Cycling (Round 2)', figureSrc: '/media/events/slow_cycling.png', day: 1, time: 'TBA', venue: 'Track', desc: 'Round 2 of Slow Cycling.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Female'] },
 
   // --- Sports (Round 3 - Day 2) ---
-  'basketball_r3': { id: 'basketball_r3', title: 'Basketball (Round 3)', figureSrc: '/media/events/basketball-highlight.png', day: 2, time: 'TBA', venue: 'Basketball Court', desc: 'Finals of Basketball tournament.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
+  'basketball_r3': { id: 'basketball_r3', title: 'Basketball', figureSrc: '/media/events/basketball-highlight-new.jpg', day: 2, time: 'TBA', venue: 'Basketball Court', desc: 'Finals of Basketball tournament.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'kabaddi_r3': { id: 'kabaddi_r3', title: 'Kabaddi (Round 3)', figureSrc: '/media/events/kabaddi.png', day: 2, time: 'TBA', venue: 'Ground', desc: 'Finals of Kabaddi.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male'] },
-  'volleyball_r3': { id: 'volleyball_r3', title: 'Volleyball (Round 3)', figureSrc: '/media/events/volleyball.jpg', day: 2, time: 'TBA', venue: 'Volleyball Court', desc: 'Finals of Volleyball.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
-  'badminton_r3': { id: 'badminton_r3', title: 'Badminton (Round 3)', figureSrc: '/media/events/badminton.jpg', day: 2, time: 'TBA', venue: 'Indoor Court', desc: 'Finals of Badminton.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
+  'volleyball_r3': { id: 'volleyball_r3', title: 'Volleyball', figureSrc: '/media/events/volleyball-highlight-new.jpg', day: 2, time: 'TBA', venue: 'Volleyball Court', desc: 'Finals of Volleyball.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
+  'badminton_r3': { id: 'badminton_r3', title: 'Badminton', figureSrc: '/media/events/badminton.jpg', day: 2, time: 'TBA', venue: 'Indoor Court', desc: 'Finals of Badminton.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'table_tennis_r3': { id: 'table_tennis_r3', title: 'Table Tennis (Round 3)', figureSrc: '/media/events/table_tennis.png', day: 2, time: 'TBA', venue: 'Indoor Hall', desc: 'Finals of Table Tennis.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'chess_r3': { id: 'chess_r3', title: 'Chess (Round 3)', figureSrc: '/media/events/chess.png', day: 2, time: 'TBA', venue: 'Indoor Hall', desc: 'Finals of Chess.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'carrom_r3': { id: 'carrom_r3', title: 'Carrom (Round 3)', figureSrc: '/media/events/carrom.png', day: 2, time: 'TBA', venue: 'Indoor Hall', desc: 'Finals of Carrom.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'tug_of_war_r3': { id: 'tug_of_war_r3', title: 'Tug Of War (Round 3)', figureSrc: '/media/events/tug_of_war.png', day: 2, time: 'TBA', venue: 'Ground', desc: 'Finals of Tug Of War.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
-  'sprints_r3': { id: 'sprints_r3', title: 'Sprints (Round 3)', figureSrc: '/media/events/sprint.jpg', day: 2, time: 'TBA', venue: 'Track', desc: 'Finals of Sprints.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
-  'football_r3': { id: 'football_r3', title: 'Football (Round 3)', figureSrc: '/media/events/football-highlight.png', day: 2, time: 'TBA', venue: 'Football Ground', desc: 'Finals of Football tournament.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male'] },
+  'sprints_r3': { id: 'sprints_r3', title: 'Sprints', figureSrc: '/media/events/sprint.jpg', day: 2, time: 'TBA', venue: 'Track', desc: 'Finals of Sprints.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
+  'football_r3': { id: 'football_r3', title: 'Football', figureSrc: '/media/events/football-highlight.png', day: 2, time: 'TBA', venue: 'Football Ground', desc: 'Finals of Football tournament.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male'] },
   'throws_r3': { id: 'throws_r3', title: 'Throws (Round 3)', figureSrc: '/media/events/throws.png', day: 2, time: 'TBA', venue: 'Field', desc: 'Finals of Throws.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'jumps_r3': { id: 'jumps_r3', title: 'Jumps (Round 3)', figureSrc: '/media/events/jumps.png', day: 2, time: 'TBA', venue: 'Field', desc: 'Finals of Jumps.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Male', 'Female'] },
-  'khokho_r3': { id: 'khokho_r3', title: 'Kho-Kho (Round 3)', figureSrc: '/media/events/khokho.jpg', day: 2, time: 'TBA', venue: 'Ground', desc: 'Finals of Kho-Kho.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
+  'khokho_r3': { id: 'khokho_r3', title: 'Kho-Kho', figureSrc: '/media/events/khokho.jpg', day: 2, time: 'TBA', venue: 'Ground', desc: 'Finals of Kho-Kho.', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['Male', 'Female'] },
   'slow_cycling_r3': { id: 'slow_cycling_r3', title: 'Slow Cycling (Round 3)', figureSrc: '/media/events/slow_cycling.png', day: 2, time: 'TBA', venue: 'Track', desc: 'Finals of Slow Cycling.', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: ['Female'] },
 
 }

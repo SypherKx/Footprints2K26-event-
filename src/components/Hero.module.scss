@@ -27,7 +27,7 @@
             font-family: 'Roboto', sans-serif;
             font-family: 'Antonio', sans-serif;
             font-weight: 400;
-            font-size: 8rem;
+            font-size: 11rem; // Reduced from 16rem
             color: #333;
             height: 100%;
             display: flex;
@@ -45,7 +45,7 @@
             }
 
             @media screen and (max-width: 699px) {
-                font-size: 6rem;
+                font-size: 6rem; // Reduced from 9rem
             }
         }
 
@@ -103,22 +103,22 @@
     .logo-container {
         position: relative;
         display: inline-block;
-        max-width: 1200px;
-        width: 90%;
+        max-width: 1400px; // Large enough but bounded
+        width: 90vw; // Responsive width
 
         .psit-logo {
             position: absolute;
             bottom: 100%;
             left: 50%;
             transform: translate(-50%, 10%);
-            width: 200px;
+            width: 12%; // Proportional to main logo
             height: auto;
             filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
             margin-bottom: 20px;
             z-index: 10;
 
             @media screen and (max-width: 768px) {
-                width: 150px; // Larger on mobile too
+                width: 20%; // Larger on mobile
                 transform: translate(-50%, 10%);
             }
         }
@@ -132,16 +132,17 @@
 
         .logo-2k26 {
             position: absolute;
-            top: 85%;
-            right: -5%;
-            width: 150px;
+            top: 95%; // Moved down to avoid overlap
+            right: 0; // Strictly right-aligned
+            width: 22%; // Increased size
             height: auto;
             filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+            // transform: rotate(-10deg);
 
             @media screen and (max-width: 768px) {
-                width: 100px; // Smaller on mobile
+                width: 30%;
                 right: 0;
-                top: 90%;
+                top: 100%;
             }
         }
     }

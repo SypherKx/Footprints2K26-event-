@@ -40,7 +40,7 @@ const Home = ({ user }) => {
             <span className={styles._ar}>2K26</span>
           </h2>
           <p className={styles.subtitle}>
-            Step into the world of FOOTPRINTS 2K26, PSIT Kanpur’s premier 3-day festival where passion, competition, and entertainment collide. We’ve lined up an extraordinary experience featuring everything from sweat-breaking physical sports to the strategic depth of modern e-sports. Designed to ignite your competitive spirit and fuel your love for art, the fest culminates in electrifying performances that will keep your pulse racing. This is your stage to shine, your arena to conquer, and your chance to experience the most thrilling three days of the year. Don't just watch the magic happen—be the heart of it.
+            Step into the world of FOOTPRINTS 2K26, PSIT Kanpur’s premier 10-day festival where passion, competition, and entertainment collide. We’ve lined up an extraordinary experience featuring everything from sweat-breaking physical sports to the strategic depth of modern e-sports. Designed to ignite your competitive spirit and fuel your love for art, the fest culminates in electrifying performances that will keep your pulse racing. This is your stage to shine, your arena to conquer, and your chance to experience the most thrilling ten days of the year. Don't just watch the magic happen—be the heart of it.
           </p>
           <div className={styles['header-btn-wrapper']}>
             <NavLink to='/gallery' className={cx('btn', styles['intro-header-btn'])}>
