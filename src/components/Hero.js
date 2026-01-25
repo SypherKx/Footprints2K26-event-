@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ReactComponent as ScrollDownIcon } from '../media/icons/down.svg';
 import HeroVideo from '../media/hero-video-2026.mp4';
-import HeroImage from '../media/hero-image.png';
+// import HeroImage from '../media/hero-image.png';
 import FootprintsLogo from '../media/footprints-font.webp';
 import PsitLogo from '../media/psit-logo.png';
 import Logo2K26 from '../media/2k26-stylized.png';
@@ -48,7 +48,6 @@ const Hero = () => {
 
   return (
     <div className={styles.hero} id="hero">
-      <img className={styles['hero-bg']} src={HeroImage} alt="" />
       <div className={styles.grain}></div>
       <video className={styles['hero-bg']} autoPlay={true} muted={true} loop={true}>
         <source src={HeroVideo} />

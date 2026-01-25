@@ -66,9 +66,13 @@ const Gallery = ({ user }) => {
           </div>
         </div>
 
-        <h1 className={cx('heading', styles['gallery-heading'])} style={{ color: 'var(--primary)', textAlign: 'center', marginBottom: '20px', zIndex: 10, position: 'relative' }}>
+        <h1 className={cx('heading', styles['gallery-heading'])} style={{ color: 'var(--primary)', textAlign: 'center', marginBottom: '10px', zIndex: 10, position: 'relative' }}>
           <span>Gallery</span>
         </h1>
+        <p className={styles['gallery-subtitle']}>
+          Where moments turn into memories and players become legends.<br />
+          Relive the glory of the past.
+        </p>
       </header>
 
       <main className={cx(styles['main-content'])} style={{ flex: 1, position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 0 }}>

@@ -26,6 +26,7 @@ export const coordinators = [
   { name: 'Vaishnavi Sharma', roll: '', phone: '', email: '' },
   { name: 'Swarnima Patel', roll: '', phone: '', email: '' },
   { name: 'Aryaveer Vikram Singh', roll: '', phone: '', email: '' },
+  { name: 'Mujahidul Islam', roll: '', phone: '', email: '' },
 ]
 
 export const mainCoordinators = [
