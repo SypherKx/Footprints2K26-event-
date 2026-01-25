@@ -89,13 +89,13 @@ const Events = ({ user }) => {
         </nav>
         <section ref={eventFigureWrapper} className={styles['event-list-wrapper']}>
           <ul className={styles['event-list']}>
-            {Object.keys(events).filter(id => events[id].day === currentDay)
+            {Object.keys(events).filter(id => events[id].day === currentDay && events[id].type !== 'Sport')
               .sort(timeCompare)
               .map(id => <EventLI key={id} {...events[id]} handleHover={setActiveEventId} />)}
           </ul>
           <div className={styles['event-figures']}>
             <div className={styles.figures}>
-              {Object.keys(events).filter(id => events[id].day === currentDay)
+              {Object.keys(events).filter(id => events[id].day === currentDay && events[id].type !== 'Sport')
                 .map(id => <EventFigure key={id} {...events[id]} isActive={activeEventId === id} />)}
             </div>
           </div>

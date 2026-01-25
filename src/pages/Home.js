@@ -40,7 +40,7 @@ const Home = ({ user }) => {
             <span className={styles._ar}>2K26</span>
           </h2>
           <p className={styles.subtitle}>
-            Step into the world of FOOTPRINTS 2K26, PSIT Kanpur’s premier 10-day festival where passion, competition, and entertainment collide. We’ve lined up an extraordinary experience featuring everything from sweat-breaking physical sports to the strategic depth of modern e-sports. Designed to ignite your competitive spirit and fuel your love for art, the fest culminates in electrifying performances that will keep your pulse racing. This is your stage to shine, your arena to conquer, and your chance to experience the most thrilling ten days of the year. Don't just watch the magic happen—be the heart of it.
+            Prepare for a 10-day eruption of energy, adrenaline, and pure passion that will redefine your college experience. We are blurring the lines between the physical and the virtual, bringing you a massive showdown that spans from the roar of the cricket pitch to the intensity of the gaming console. Whether you bleed for the sport or thrive on the strategy, this is your stage to shine and your arena to conquer. The vibe is unmatched, the competition is fierce, and the glory is waiting. <strong>Bring your game, bring your squad, and let's make history.</strong>
           </p>
           <div className={styles['header-btn-wrapper']}>
             <NavLink to='/gallery' className={cx('btn', styles['intro-header-btn'])}>
@@ -86,10 +86,7 @@ const Home = ({ user }) => {
           </h2>
           <div className={cx(styles.subtitle, 'container')} id='coordinatorsList'>
             <ul>
-              {coordinators.filter((val, i) => i <= 22).map(val => <li key={val.name}> {val.name}</li>)}
-            </ul>
-            <ul>
-              {coordinators.filter((val, i) => i > 22).map(val => <li key={val.name}> {val.name}</li>)}
+              {coordinators.map(val => <li key={val.name}> {val.name}</li>)}
             </ul>
           </div>
         </header>

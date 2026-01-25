@@ -394,6 +394,27 @@
 
 // Last section -- Our team
 .coordinators {
+
+    // Mobile-first: stacked centered layout
+    @media screen and (max-width: 800px) {
+        .sectionHeader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .heading {
+                flex-direction: row;
+                text-align: center;
+                justify-content: center;
+
+                span {
+                    margin-right: 0.3ch !important; // Override inline style
+                }
+            }
+        }
+    }
+
     .sectionHeader> {
         .subtitle {
             will-change: transform;
@@ -408,7 +429,7 @@
             line-height: 0.9;
             position: absolute;
             bottom: 4.4rem;
-            bottom: calc(0.4 * var(--heading-font-size));
+            bottom: calc(1.0 * var(--heading-font-size));
             left: calc(1.4 * var(--heading-font-size));
 
             >ul {
@@ -420,10 +441,6 @@
                 }
             }
 
-            >ul:last-child {
-                margin-left: var(--heading-font-size);
-            }
-
             >span {
                 margin-bottom: 0.8rem;
             }
@@ -433,37 +450,39 @@
             }
 
             @media screen and (max-width: 1900px) {
-                font-size: 3rem;
-            }
-
-            @media screen and (max-width: 1600px) {
                 font-size: 2.5rem;
             }
 
-            @media screen and (max-width: 1366px) {
-                font-size: 2.25rem;
-            }
-
-            @media screen and (max-width: 1150px) {
+            @media screen and (max-width: 1600px) {
                 font-size: 2rem;
             }
 
-            @media screen and (max-width: 999px) {
+            @media screen and (max-width: 1366px) {
                 font-size: 1.8rem;
             }
 
-            @media screen and (max-width: 800px) {
-                font-size: 1.4rem;
-                bottom: 1.2rem;
+            @media screen and (max-width: 1150px) {
+                font-size: 1.5rem;
             }
 
-            @media screen and (max-width: 650px) {
-                font-size: 1.2rem;
+            @media screen and (max-width: 999px) {
+                font-size: 1.3rem;
+                bottom: calc(0.9 * var(--heading-font-size));
+                left: calc(1.2 * var(--heading-font-size));
+            }
+
+            @media screen and (max-width: 800px) {
+                // Mobile: centered below heading
+                position: static;
+                margin-top: 2rem;
+                font-size: 1rem;
+                text-align: center;
+                width: 100%;
+                padding: 0 1rem;
             }
 
             @media screen and (max-width: 500px) {
-                font-size: 0.95rem;
-                bottom: 0;
+                font-size: 0.85rem;
             }
         }
     }
