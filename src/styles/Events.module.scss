@@ -1,8 +1,8 @@
 .events {
     --list-width: 100%;
-    --li-title-width: 100%;
-    --li-venue-width: 100%;
-    --li-time-width: 100%;
+    --li-title-width: 50%;
+    --li-venue-width: 35%;
+    --li-time-width: 15%;
 
     .page-header {
         @media screen and (max-width: 699px) {
@@ -138,7 +138,7 @@
                     flex-direction: row;
                     justify-content: flex-end;
                     align-items: flex-end;
-                    flex-wrap: wrap;
+                    flex-wrap: nowrap;
                     width: var(--list-width);
                     min-width: 100%;
                     overflow: hidden;
@@ -307,8 +307,8 @@
             }
 
             .title {
-                padding-top: 1rem;
-                padding-bottom: .625rem;
+                // padding-top: 1rem;
+                // padding-bottom: .625rem;
                 text-align: left;
             }
         }
