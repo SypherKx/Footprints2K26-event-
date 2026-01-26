@@ -80,22 +80,31 @@ const Events = ({ user }) => {
       <main className={cx(styles['main-content'])}>
         <nav className={styles['schedule-nav']}>
           <ul className={styles.tabs}>
-            {['Mon.', 'Tue.', 'Wed.'].map((day, i) => (
-              <ScheduleNavBtn key={day}
+            {['Mon.', 'Tue.', 'Wed.', 'Thu.'].map((day, i) => (
+              <ScheduleNavBtn key={i}
                 currentDay={currentDay} day={i}
                 label={day} handleDayChange={setCurrentDay} />
             ))}
           </ul>
         </nav>
         <section ref={eventFigureWrapper} className={styles['event-list-wrapper']}>
+          <div className={cx(styles['event-list-header'], styles['event-list'])}>
+            <div className={styles['event-li']}>
+              <div className={styles['event-li-inner']} style={{ paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
+                <div className={styles.time} style={{ fontWeight: 'bold', fontSize: '1.2rem', order: 1 }}>Time</div>
+                <div className={styles.title} style={{ fontWeight: 'bold', order: 2 }}><h4>Sport</h4></div>
+                <div className={styles.venue} style={{ fontWeight: 'bold', fontSize: '1.2rem', order: 3 }}>Venue</div>
+              </div>
+            </div>
+          </div>
           <ul className={styles['event-list']}>
-            {Object.keys(events).filter(id => events[id].day === currentDay && events[id].type !== 'Sport')
+            {Object.keys(events).filter(id => events[id].day === currentDay)
               .sort(timeCompare)
               .map(id => <EventLI key={id} {...events[id]} handleHover={setActiveEventId} />)}
           </ul>
           <div className={styles['event-figures']}>
             <div className={styles.figures}>
-              {Object.keys(events).filter(id => events[id].day === currentDay && events[id].type !== 'Sport')
+              {Object.keys(events).filter(id => events[id].day === currentDay)
                 .map(id => <EventFigure key={id} {...events[id]} isActive={activeEventId === id} />)}
             </div>
           </div>

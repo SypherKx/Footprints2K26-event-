@@ -44,7 +44,7 @@ const Footer = () => {
             <button className={cx(styles.devteamBtn, {
               [styles.on]: devTeam
             })} onClick={(e) => { e.preventDefault(); setDevTeam(!devTeam) }}>
-              SypherKx
+              TEAM U4
             </button>
           </span>
           <span className={styles.sep}>~</span>
@@ -52,6 +52,10 @@ const Footer = () => {
           {devTeam && (
             <ul className={styles.devteam}>
               <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/SypherKx">@Karan Pratap Singh</a></li>
+              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/samarthbhatt">@Samarth Bhatt</a></li>
+              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/DivyanshVijay">@Divyansh Vijay</a></li>
+              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/SuryanshSharan">@Suryansh Sharan</a></li>
+              <li><a className={cx('link', styles.ln)} target='_blank' rel='noreferrer' href="https://github.com/ArpitBajpai">@Arpit Bajpai</a></li>
             </ul>
           )}
         </div>

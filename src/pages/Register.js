@@ -20,7 +20,7 @@ const Register = () => {
       <main className={styles['main-content']}>
         <div className={styles.divider}></div>
         <p className={styles.subtitle}>
-          Get ready to participate in the biggest fest of the year.
+          Get ready to participate in the biggest sports fest of the year.
         </p>
 
         <div className={styles['coming-soon']}>
@@ -28,11 +28,12 @@ const Register = () => {
           <p className={styles['info-text']}>
             We are currently finalizing the events.
           </p>
-          <div style={{ marginTop: '2rem' }}>
-            <SupportLink />
-          </div>
         </div>
       </main>
+
+      <div style={{ position: 'absolute', bottom: '2rem', width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <SupportLink />
+      </div>
     </motion.div>
   )
 }
