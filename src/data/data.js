@@ -74,7 +74,7 @@ export const events = {
   'day3_tba': { id: 'day3_tba', title: 'TBA', figureSrc: '', day: 3, time: 'TBA', venue: 'TBA', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Highlights ---
-  'football_r3': { id: 'football_r3', title: 'Football', figureSrc: '/media/events/football-highlight.png', desc: 'The beautiful game', type: 'Sport', highlight: true, isRegistrationOpen: true },
+  'football_r3': { id: 'football_r3', title: 'Football', figureSrc: '/media/events/football-highlight-new.jpg', desc: 'The beautiful game', type: 'Sport', highlight: true, isRegistrationOpen: true },
   'basketball_r3': { id: 'basketball_r3', title: 'Basketball', figureSrc: '/media/events/basketball-highlight-new.jpg', desc: 'Dribble, shoot, score', type: 'Sport', highlight: true, isRegistrationOpen: true },
   'sprints_r3': { id: 'sprints_r3', title: 'Sprints', figureSrc: '/media/events/sprint.jpg', desc: 'Speed and endurance', type: 'Sport', highlight: true, isRegistrationOpen: true },
   'khokho_r3': { id: 'khokho_r3', title: 'Kho-Kho', figureSrc: '/media/events/khokho-highlight.jpg', desc: 'Traditional tag game', type: 'Sport', highlight: true, isRegistrationOpen: true },
