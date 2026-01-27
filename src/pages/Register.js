@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import styles from '../styles/Register.module.scss';
 import Footer from '../layouts/Footer';
 
-import imgBadminton from '../media/events/badminton_new3.png';
-import imgKhoKho from '../media/events/kho-kho_new2.png';
-import imgBasketball from '../media/events/basketball_new.png';
-import imgSlowCycle from '../media/events/slow-cycle_new.png';
-import imgThrow from '../media/events/throw_new.png';
-import imgChess from '../media/events/chess_new.png';
-import imgKabaddi from '../media/events/kabaddi_new.png';
-import imgSprint from '../media/events/sprint_new.png';
-import imgTableTennis from '../media/events/table-tennis_new.png';
-import imgCarrom from '../media/events/carrom_new2.png';
+import imgBadminton from '../media/events/badminton_new3.jpg';
+import imgKhoKho from '../media/events/kho-kho_new2.jpg';
+import imgBasketball from '../media/events/basketball_new.jpg';
+import imgSlowCycle from '../media/events/slow-cycle_new.jpg';
+import imgThrow from '../media/events/throw_new.jpg';
+import imgChess from '../media/events/chess_new.jpg';
+import imgKabaddi from '../media/events/kabaddi_new.jpg';
+import imgSprint from '../media/events/sprint_new.jpg';
+import imgTableTennis from '../media/events/table-tennis_new.jpg';
+import imgCarrom from '../media/events/carrom_new2.jpg';
 import imgFootball from '../media/events/football_new.jpg';
-import imgVolleyball from '../media/events/volleyball_new2.png';
+import imgVolleyball from '../media/events/volleyball_new2.jpg';
 import imgRopeRoyale from '../media/events/rope-royale_new.jpg';
-import imgLongJump from '../media/events/jumps_new.png';
+import imgLongJump from '../media/events/jumps_new.jpg';
 
 // Event Data
 const EVENTS_DATA = [
