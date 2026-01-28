@@ -62,16 +62,16 @@ export const highlights = ['football_r3', 'basketball_r3', 'sprints_r3', 'khokho
 
 export const events = {
   // --- Sports (Round 1 - Day 0) ---
-  'day0_tba': { id: 'day0_tba', title: 'TBA', figureSrc: '', day: 0, time: 'TBA', venue: 'TBA', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
+  'day0_tba': { id: 'day0_tba', title: 'To Be Announced', figureSrc: '', day: 0, time: 'To Be Announced', venue: 'To Be Announced', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Sports (Round 2 - Day 1) ---
-  'day1_tba': { id: 'day1_tba', title: 'TBA', figureSrc: '', day: 1, time: 'TBA', venue: 'TBA', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
+  'day1_tba': { id: 'day1_tba', title: 'To Be Announced', figureSrc: '', day: 1, time: 'To Be Announced', venue: 'To Be Announced', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Sports (Round 3 - Day 2) ---
-  'day2_tba': { id: 'day2_tba', title: 'TBA', figureSrc: '', day: 2, time: 'TBA', venue: 'TBA', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
+  'day2_tba': { id: 'day2_tba', title: 'To Be Announced', figureSrc: '', day: 2, time: 'To Be Announced', venue: 'To Be Announced', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Sports (Day 3) ---
-  'day3_tba': { id: 'day3_tba', title: 'TBA', figureSrc: '', day: 3, time: 'TBA', venue: 'TBA', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
+  'day3_tba': { id: 'day3_tba', title: 'To Be Announced', figureSrc: '', day: 3, time: 'To Be Announced', venue: 'To Be Announced', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Highlights ---
   'football_r3': { id: 'football_r3', title: 'Football', figureSrc: '/media/events/football-highlight-new.jpg', desc: 'The beautiful game', type: 'Sport', highlight: true, isRegistrationOpen: true },

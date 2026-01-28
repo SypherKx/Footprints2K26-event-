@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/Register.module.scss';
 import Footer from '../layouts/Footer';
@@ -37,6 +37,7 @@ const EVENTS_DATA = [
 ];
 
 const Register = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const sportsTags = EVENTS_DATA.map(e => e.name.toUpperCase());
   // Duplicate tags to ensure seamless scrolling
   const displayTags = [...sportsTags, ...sportsTags, ...sportsTags, ...sportsTags];
@@ -57,10 +58,64 @@ const Register = () => {
             </div>
           </div>
           <h2>Events</h2>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '2rem',
+            marginBottom: '1rem',
+            zIndex: 10,
+            position: 'relative',
+            width: '100%'
+          }}>
+            <div style={{ position: 'relative', width: '90%', maxWidth: '400px' }}>
+              <input
+                type="text"
+                placeholder="Search events..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  padding: '0.8rem 1.5rem',
+                  paddingLeft: '3rem', // Make space for icon
+                  width: '100%',
+                  backgroundColor: 'white',
+                  border: '2px solid #974B60',
+                  borderRadius: '30px',
+                  color: 'black',
+                  fontSize: '1rem',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                  outline: 'none',
+                  textAlign: 'center'
+                }}
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  position: 'absolute',
+                  left: '1rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: '1.2rem',
+                  height: '1.2rem',
+                  pointerEvents: 'none'
+                }}
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+          </div>
         </header>
 
         <div className={styles.eventsGrid}>
-          {EVENTS_DATA.map((event) => (
+          {EVENTS_DATA.filter(event =>
+            !searchQuery || event.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+          ).map((event) => (
             <motion.div
               key={event.id}
               className={styles.eventCard}
