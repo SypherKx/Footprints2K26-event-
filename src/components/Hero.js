@@ -61,6 +61,8 @@ const Hero = () => {
               src={PsitLogo}
               alt="PSIT Logo"
               className={styles['psit-logo']}
+              fetchPriority="high"
+              loading="eager"
             />
 
             {/* Main Footprints Logo */}
@@ -68,6 +70,8 @@ const Hero = () => {
               src={FootprintsLogo}
               alt="Footprints 2K26"
               className={styles['main-logo']}
+              fetchPriority="high"
+              loading="eager"
             />
 
             {/* 2K26 Logo - Below and Right */}
