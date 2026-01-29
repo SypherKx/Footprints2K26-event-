@@ -46,6 +46,11 @@ const Hero = () => {
         } else {
           navEl.style.position = 'fixed';
           navEl.style.top = '0';
+          // Auto-mute audio when hero is not visible (user scrolled down)
+          if (videoRef.current && !videoRef.current.muted) {
+            videoRef.current.muted = true;
+            setIsMuted(true);
+          }
         }
       })
     })
