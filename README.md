@@ -76,5 +76,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Karan Pratap Singh (SypherKx)**
 - 🌐 GitHub: [@SypherKx](https://github.com/SypherKx)
 
----
+---hey guys 
 *Handcrafted with 🖤 by SypherKx ~ © 2K26 FOOTPRINTS PSIT KANPUR*
