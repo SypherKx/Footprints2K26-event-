@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <div className={styles.hero} id="hero">
       <div className={styles.grain}></div>
-      <video className={styles['hero-bg']} autoPlay={true} muted={true} loop={true} playsInline={true} preload="auto" poster={Logo2K26}>
+      <video draggable="false" className={styles['hero-bg']} autoPlay={true} muted={true} loop={true} playsInline={true} preload="auto" poster={Logo2K26}>
         <source src={HeroVideo} />
       </video>
       <div className={styles.content}>
@@ -58,6 +58,7 @@ const Hero = () => {
 
             {/* PSIT Logo - Above */}
             <img
+              draggable="false"
               src={PsitLogo}
               alt="PSIT Logo"
               className={styles['psit-logo']}
@@ -67,6 +68,7 @@ const Hero = () => {
 
             {/* Main Footprints Logo */}
             <img
+              draggable="false"
               src={FootprintsLogo}
               alt="Footprints 2K26"
               className={styles['main-logo']}
@@ -76,6 +78,7 @@ const Hero = () => {
 
             {/* 2K26 Logo - Below and Right */}
             <img
+              draggable="false"
               src={Logo2K26}
               alt="2K26"
               className={styles['logo-2k26']}

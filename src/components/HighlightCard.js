@@ -4,7 +4,7 @@ import styles from './HighlightCard.module.scss';
 const HighlightCard = ({ figureSrc, title, desc, type, isRegistrationOpen, user }) => (
   <article className={styles.card}>
     <figure>
-      <img alt='' src={figureSrc} loading="lazy" decoding="async" />
+      <img draggable="false" alt='' src={figureSrc} loading="lazy" decoding="async" />
     </figure>
     <main>
       <h3 className={styles.cardTitle}>{title}</h3>

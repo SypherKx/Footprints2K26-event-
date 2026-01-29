@@ -113,7 +113,7 @@ useEffect(() => {
       
         <button onClick={SignUpWithGoogle} className='signInBtn'>
 
-        <img src="https://img.icons8.com/color/30/null/google-logo.png" alt=""/>
+        <img draggable="false" src="https://img.icons8.com/color/30/null/google-logo.png" alt=""/>
           <p> Sign In With google</p>
           </button>
         </div>

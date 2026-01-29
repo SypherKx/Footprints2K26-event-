@@ -289,7 +289,7 @@ const EventFigure = ({ title = "", figureSrc }) =>
   figureSrc && (
     <article className={styles["event-card"]}>
       <figure className={styles["img-wrapper"]}>
-        <img alt={title} src={figureSrc} />
+        <img draggable="false" alt={title} src={figureSrc} />
       </figure>
       <main>
         <h3 className={styles.title}>{title}</h3>

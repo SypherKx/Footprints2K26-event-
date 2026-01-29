@@ -155,7 +155,7 @@ const EventFigure = ({ id, title, figureSrc, isActive = false }) => (
   figureSrc && <article key={id}
     className={cx(styles['current-figure'], { [styles.active]: isActive })}>
     <figure className={styles['img-wrapper']}>
-      <img alt={title} src={figureSrc} loading="lazy" decoding="async" />
+      <img draggable="false" alt={title} src={figureSrc} loading="lazy" decoding="async" />
     </figure>
   </article>
 )
