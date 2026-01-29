@@ -2,6 +2,7 @@ import styles from '../styles/Footer.module.scss';
 import cx from 'classnames'
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   const [devTeam, setDevTeam] = useState(false);
@@ -25,17 +26,23 @@ const Footer = () => {
               <li><NavLink to="/events">Schedule</NavLink></li>
               <li><NavLink to="/gallery">Gallery</NavLink></li>
               <li><NavLink to="/register">Events</NavLink></li>
-
             </ul>
           </div>
           <div className={styles.linkColumn}>
             <h4>Contact Us</h4>
             <ul>
-
               <li><a href="https://chat.whatsapp.com/JsCM0ujhOAdAo4IxaV8EgO" target="_blank" rel="noreferrer">Whatsapp</a></li>
             </ul>
           </div>
-
+          <div className={styles.linkColumn}>
+            <h4>Follow Us</h4>
+            <div className={styles.socialIcons}>
+              <a href="https://www.facebook.com/psitkanpur2004" target="_blank" rel="noreferrer"><FaFacebook /></a>
+              <a href="https://www.instagram.com/ignitia.psitkanpur/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+              <a href="https://x.com/PSITKanpur2004" target="_blank" rel="noreferrer"><FaTwitter /></a>
+              <a href="https://www.youtube.com/@psitkanpur" target="_blank" rel="noreferrer"><FaYoutube /></a>
+            </div>
+          </div>
         </div>
       </div>
 
