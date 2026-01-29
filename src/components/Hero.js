@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ReactComponent as ScrollDownIcon } from '../media/icons/down.svg';
-import HeroVideo from '../media/new-background-compressed.mp4';
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import HeroVideo from '../media/new-background.mp4';
 // import HeroImage from '../media/hero-image.png';
 import FootprintsLogo from '../media/footprints-font.webp';
 import PsitLogo from '../media/psit-logo-new.png';
@@ -8,11 +9,25 @@ import Logo2K26 from '../media/2k26-stylized.png';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
+  const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const navEl = document.getElementById('nav');
     const heroEl = document.getElementById('hero');
     const coordinatorNames = document.getElementById('coordinatorsList');
+
+    // Attempt to play video on mount
+    if (videoRef.current) {
+      videoRef.current.volume = 1.0;
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay prevented:", error);
+        // Fallback: Mute and play if autoplay with sound failed
+        setIsMuted(true);
+        videoRef.current.muted = true;
+        videoRef.current.play();
+      });
+    }
 
     const parallaxAnimate = () => {
       // parallax animate coordinators
@@ -46,10 +61,27 @@ const Hero = () => {
     }
   }, [])
 
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  }
+
   return (
     <div className={styles.hero} id="hero">
       <div className={styles.grain}></div>
-      <video draggable="false" className={styles['hero-bg']} autoPlay={true} muted={true} loop={true} playsInline={true} preload="auto" poster={Logo2K26}>
+      <video
+        ref={videoRef}
+        draggable="false"
+        className={styles['hero-bg']}
+        autoPlay={true}
+        muted={isMuted}
+        loop={true}
+        playsInline={true}
+        preload="auto"
+        poster={Logo2K26}
+      >
         <source src={HeroVideo} />
       </video>
       <div className={styles.content}>
@@ -86,6 +118,16 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Audio Toggle Button */}
+      <button
+        className={styles.audioControl}
+        onClick={toggleAudio}
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+      </button>
+
       <div className={styles.scrollDown} aria-hidden='true'>
         <ScrollDownIcon />
       </div>
