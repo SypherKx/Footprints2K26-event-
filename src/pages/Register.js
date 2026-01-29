@@ -123,7 +123,7 @@ const Register = () => {
               whileTap={{ scale: 0.98 }}
             >
               <div className={styles.imageWrapper}>
-                <img src={event.img} alt={event.name} className={styles.eventImage} loading="lazy" />
+                <img draggable="false" src={event.img} alt={event.name} className={styles.eventImage} loading="lazy" />
                 <div className={styles.eventOverlay}>
                   <h3 className={styles.eventName}>{event.name}</h3>
                 </div>
