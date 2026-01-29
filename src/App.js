@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "./layouts/Layout";
 import "./styles/index.scss";
 import Alert from "./components/Alert";
@@ -68,6 +69,7 @@ function App() {
         updateAuthUserAttr={updateAuthUserAttr}
         checkingStatus={checkingStatus}
       />
+      <Analytics />
     </Layout>
   );
 }
