@@ -11,6 +11,7 @@ export const coordinators = [
   { name: 'Sameer Kumar Singh', roll: '', phone: '', email: '' },
   { name: 'Jahnavi Priya', roll: '', phone: '', email: '' },
   { name: 'Twinkle Pal', roll: '', phone: '', email: '' },
+  { name: 'Arpit Bajpai', roll: '', phone: '', email: '' },
   { name: 'Arushi Singh', roll: '', phone: '', email: '' },
   { name: 'Harshit Arora', roll: '', phone: '', email: '' },
   { name: 'Yash Yadav', roll: '', phone: '', email: '' },

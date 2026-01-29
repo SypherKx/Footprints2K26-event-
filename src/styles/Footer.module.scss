@@ -82,6 +82,19 @@ footer {
                 color: var(--primary);
             }
         }
+
+        .socialIcons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+
+            a {
+                font-size: 1.6rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
 
     @media screen and (max-width: 500px) {
@@ -89,6 +102,10 @@ footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+
+        .socialIcons {
+            justify-content: center;
+        }
     }
 }
 
