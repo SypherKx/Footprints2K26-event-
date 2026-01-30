@@ -9,7 +9,7 @@ import Logo2K26 from '../media/2k26-stylized.png';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -19,13 +19,8 @@ const Hero = () => {
 
     // Attempt to play video on mount
     if (videoRef.current) {
-      videoRef.current.volume = 1.0;
       videoRef.current.play().catch(error => {
         console.log("Autoplay prevented:", error);
-        // Fallback: Mute and play if autoplay with sound failed
-        setIsMuted(true);
-        videoRef.current.muted = true;
-        videoRef.current.play();
       });
     }
 
@@ -74,7 +69,7 @@ const Hero = () => {
   }
 
   return (
-    <div className={styles.hero} id="hero">
+    <div className={styles.hero} id="hero" onClick={toggleAudio}>
       <div className={styles.grain}></div>
       <video
         ref={videoRef}
@@ -127,7 +122,7 @@ const Hero = () => {
       {/* Audio Toggle Button */}
       <button
         className={styles.audioControl}
-        onClick={toggleAudio}
+        onClick={(e) => { e.stopPropagation(); toggleAudio(); }}
         aria-label={isMuted ? "Unmute video" : "Mute video"}
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
