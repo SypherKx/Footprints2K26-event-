@@ -14,7 +14,7 @@ Footprints is not just a tournament; it's an emotion. It hosts a wide array of s
 - **🔐 Secure Authentication**: Seamless Sign In and Sign Up using Firebase Authentication.
 - **👤 User Profiles**: personalized dashboard for participants to manage their registrations and view their status.
 - **📸 Gallery**: A visual journey through the best moments of past events.
-- **🤝 Sponsors Section**: showcasing the brands that support us.
+- **🤝 Sponsors Section**:       showcasing the brands that support us.
 - **⚡ Admin Panel**: robust tools for organizers to manage teams, scores, and logistics.
 - **🎨 Interactive UI**: A modern, dark-themed aesthetic with smooth animations powered by **Framer Motion**.
 
