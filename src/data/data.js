@@ -31,6 +31,7 @@ export const coordinators = [
   { name: 'Mujahidul Islam', roll: '', phone: '', email: '' },
   { name: 'Ashutosh Trivedi', roll: '', phone: '', email: '' },
   { name: 'Aman Pratap Singh', roll: '', phone: '', email: '' }
+  { name: 'Arghadeep Rathore', roll: '', phone: '', email: '' }
 ]
 
 export const mainCoordinators = [
