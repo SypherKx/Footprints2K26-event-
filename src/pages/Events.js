@@ -508,9 +508,16 @@ const EventModal = ({ event, onClose }) => {
             </div>
           )}
 
-          {/* Coming Soon Button */}
+          {/* Register Button */}
           {event.isRegistrationOpen && (
-            <div
+            <a
+              href="https://www.ignitia.in/events"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open('https://www.ignitia.in/events', '_blank');
+              }}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -518,21 +525,25 @@ const EventModal = ({ event, onClose }) => {
                 gap: '8px',
                 width: '100%',
                 padding: '15px 20px',
-                background: 'rgba(255,255,255,0.1)',
+                background: 'linear-gradient(135deg, #974B60 0%, #b85a72 100%)',
                 border: 'none',
                 borderRadius: '12px',
-                color: 'rgba(255,255,255,0.5)',
+                color: '#fff',
                 fontSize: '13px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
+                textDecoration: 'none',
                 letterSpacing: '0.8px',
-                cursor: 'not-allowed',
+                boxShadow: '0 8px 25px rgba(151, 75, 96, 0.35)',
+                cursor: 'pointer',
                 marginTop: '4px',
+                transition: 'all 0.25s ease',
+                pointerEvents: 'auto',
               }}
             >
-              <img src={TrophyIcon} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', opacity: 0.5 }} />
-              COMING SOON
-            </div>
+              <img src={TrophyIcon} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
+              REGISTER NOW
+            </a>
           )}
 
           {/* Closed Registration Message */}
