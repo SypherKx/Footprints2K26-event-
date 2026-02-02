@@ -5,7 +5,8 @@ import { events } from '../data/data';
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SupportLink from '../components/SupportLink';
-import { FiExternalLink } from 'react-icons/fi';
+
+import { ReactComponent as RegisterIcon } from '../media/icons/register.svg';
 import TrophyIcon from '../media/icons/trophy-icon.png';
 
 const timeCompare = (a, b) => {
@@ -76,11 +77,11 @@ const Events = ({ user }) => {
             <span>Schedule</span>
           </h1>
           <div className={cx(styles['header-btn-wrapper'])}>
-            <a href='https://www.ignitia.in/events' target='_blank' rel='noopener noreferrer' className={cx('btn', styles['intro-header-btn'])}>
+            <NavLink to='/register' className={cx('btn', styles['intro-header-btn'])}>
               <span className={cx('btn-subtitle', styles['intro-btn-subtitle'])}>Registrations Open</span>
               <span className={cx('btn-text', styles['intro-btn-text'])}>Register Now</span>
-              <FiExternalLink />
-            </a>
+              <RegisterIcon />
+            </NavLink>
           </div>
           <div className={cx('subtitle', styles['header-subtitle'])}>
             <h2>Feb. 16-25</h2>
@@ -398,7 +399,7 @@ const EventModal = ({ event, onClose }) => {
             }}
           >
             {[
-              { label: 'Category', value: event.gender?.length > 0 ? event.gender.map(g => g === 'M' ? 'Male' : 'Female').join(' / ') : 'Open' },
+              { label: 'Category', value: event.category || 'Male / Female' },
               { label: 'Venue', value: event.venue || 'TBA' },
               { label: 'Time', value: event.time || 'TBA' },
               { label: 'Price', value: event.price || 'TBA' },
@@ -507,12 +508,9 @@ const EventModal = ({ event, onClose }) => {
             </div>
           )}
 
-          {/* Register Button */}
+          {/* Coming Soon Button */}
           {event.isRegistrationOpen && (
-            <a
-              href="https://www.ignitia.in/events"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -520,29 +518,21 @@ const EventModal = ({ event, onClose }) => {
                 gap: '8px',
                 width: '100%',
                 padding: '15px 20px',
-                background: (hasBothGenders && !selectedGender)
-                  ? 'rgba(255,255,255,0.1)'
-                  : 'linear-gradient(135deg, #974B60 0%, #b85a72 100%)',
+                background: 'rgba(255,255,255,0.1)',
                 border: 'none',
                 borderRadius: '12px',
-                color: (hasBothGenders && !selectedGender) ? 'rgba(255,255,255,0.4)' : '#fff',
+                color: 'rgba(255,255,255,0.5)',
                 fontSize: '13px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
-                textDecoration: 'none',
                 letterSpacing: '0.8px',
-                boxShadow: (hasBothGenders && !selectedGender) ? 'none' : '0 8px 25px rgba(151, 75, 96, 0.35)',
-                cursor: (hasBothGenders && !selectedGender) ? 'not-allowed' : 'pointer',
+                cursor: 'not-allowed',
                 marginTop: '4px',
-                transition: 'all 0.25s ease',
               }}
             >
-              <FiExternalLink size={18} />
-              {(hasBothGenders && !selectedGender)
-                ? '← Select Category First'
-                : `Register Now${selectedGender ? ` (${selectedGender === 'M' ? 'Male' : 'Female'})` : ''}`
-              }
-            </a>
+              <img src={TrophyIcon} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', opacity: 0.5 }} />
+              COMING SOON
+            </div>
           )}
 
           {/* Closed Registration Message */}
