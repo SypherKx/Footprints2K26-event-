@@ -78,12 +78,12 @@ export const events = {
   'day3_tba': { id: 'day3_tba', title: 'To Be Announced', figureSrc: '', day: 3, time: 'To Be Announced', venue: 'To Be Announced', desc: 'Schedule to be announced', type: 'Sport', highlight: false, isRegistrationOpen: true, gender: [] },
 
   // --- Highlights ---
-  'football_r3': { id: 'football_r3', title: 'Football', figureSrc: '/media/events/football-highlight-new.jpg', desc: 'The beautiful game', type: 'Sport', highlight: true, isRegistrationOpen: true },
-  'basketball_r3': { id: 'basketball_r3', title: 'Basketball', figureSrc: '/media/events/basketball-highlight-new.jpg', desc: 'Dribble, shoot, score', type: 'Sport', highlight: true, isRegistrationOpen: true },
-  'sprints_r3': { id: 'sprints_r3', title: 'Sprints', figureSrc: '/media/events/sprint.jpg', desc: 'Speed and endurance', type: 'Sport', highlight: true, isRegistrationOpen: true },
-  'khokho_r3': { id: 'khokho_r3', title: 'Kho-Kho', figureSrc: '/media/events/khokho-highlight.jpg', desc: 'Traditional tag game', type: 'Sport', highlight: true, isRegistrationOpen: true },
-  'badminton_r3': { id: 'badminton_r3', title: 'Badminton', figureSrc: '/media/events/badminton.jpg', desc: 'Smash it!', type: 'Sport', highlight: true, isRegistrationOpen: true },
-  'volleyball_r3': { id: 'volleyball_r3', title: 'Volleyball', figureSrc: '/media/events/volleyball-highlight-new.jpg', desc: 'Spike your way to victory', type: 'Sport', highlight: true, isRegistrationOpen: true },
+  'football_r3': { id: 'football_r3', price: 'TBA', title: 'Football', figureSrc: '/media/events/football-highlight-new.jpg', desc: 'The beautiful game', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=football_r3&gender=M', femaleLink: '/register?event=football_r3&gender=F' },
+  'basketball_r3': { id: 'basketball_r3', price: 'TBA', title: 'Basketball', figureSrc: '/media/events/basketball-highlight-new.jpg', desc: 'Dribble, shoot, score', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=basketball_r3&gender=M', femaleLink: '/register?event=basketball_r3&gender=F' },
+  'sprints_r3': { id: 'sprints_r3', price: 'TBA', title: 'Sprints', figureSrc: '/media/events/sprint.jpg', desc: 'Speed and endurance', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=sprints_r3&gender=M', femaleLink: '/register?event=sprints_r3&gender=F' },
+  'khokho_r3': { id: 'khokho_r3', price: 'TBA', title: 'Kho-Kho', figureSrc: '/media/events/khokho-highlight.jpg', desc: 'Traditional tag game', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=khokho_r3&gender=M', femaleLink: '/register?event=khokho_r3&gender=F' },
+  'badminton_r3': { id: 'badminton_r3', price: 'TBA', title: 'Badminton', figureSrc: '/media/events/badminton.jpg', desc: 'Smash it!', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=badminton_r3&gender=M', femaleLink: '/register?event=badminton_r3&gender=F' },
+  'volleyball_r3': { id: 'volleyball_r3', price: 'TBA', title: 'Volleyball', figureSrc: '/media/events/volleyball-highlight-new.jpg', desc: 'Spike your way to victory', type: 'Sport', highlight: true, isRegistrationOpen: true, gender: ['M', 'F'], maleLink: '/register?event=volleyball_r3&gender=M', femaleLink: '/register?event=volleyball_r3&gender=F' },
 }
 
 export const eventSlots = {
