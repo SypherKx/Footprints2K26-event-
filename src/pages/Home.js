@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss';
 
 import { ReactComponent as ScheduleIcon } from '../media/icons/schedule.svg';
 import { ReactComponent as LinkIcon } from '../media/icons/link.svg';
-import Carousel from '../components/Carousel';
+// import Carousel from '../components/Carousel';
 import HighlightCard from '../components/HighlightCard';
 
 import { events, highlights } from '../data/data';
@@ -12,6 +12,7 @@ import { mainCoordinators, coordinators } from '../data/data'
 import Hero from '../components/Hero';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const tags = [
   'basketball', 'football', 'kabaddi', 'volleyball', 'badminton', 'chess', 'carrom',
@@ -147,7 +148,7 @@ const Home = ({ user }) => {
               animate={introInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              FOOTPRINTS
+              <Link to='/games'>FOOTPRINTS</Link>
             </motion.span>
             <motion.span
               className={styles._ar}
@@ -202,7 +203,9 @@ const Home = ({ user }) => {
           initial="hidden"
           animate={highlightsInView ? "visible" : "hidden"}
         >
-          <h2 className={styles.heading}>
+          <h2 style={{
+            color: '#974B60'
+          }} className={styles.heading}>
             <span>Highlights</span>
           </h2>
         </motion.header>

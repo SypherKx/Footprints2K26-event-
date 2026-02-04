@@ -8,6 +8,7 @@ const links = [
   { link: '/events', name: 'Schedule' },
   { link: '/gallery', name: 'Gallery' },
   { link: '/register', name: 'Events' },
+  // { link: '/games', name: 'Games' },
   // { link: '/sponsors', name: 'Sponsors' },
   // Profile link only shown when auth is enabled
   ...(ENABLE_AUTH ? [{ link: '/user', name: 'Profile', auth: true }] : []),

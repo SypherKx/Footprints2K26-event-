@@ -24,6 +24,24 @@ const Events = ({ user }) => {
   const [currentDay, setCurrentDay] = useState(0);
   const [activeEventId, setActiveEventId] = useState(null);
   const [selectedEventId, setSelectedEventId] = useState(null);
+  const [scheduleConfig, setScheduleConfig] = useState({
+    days: [
+      { id: 0, label: 'Mon.' },
+      { id: 1, label: 'Tue.' },
+      { id: 2, label: 'Wed.' },
+      { id: 3, label: 'Thu.' }
+    ],
+    eventDates: 'Feb. 16-25',
+    year: '2K26'
+  });
+
+  // Fetch schedule config from JSON
+  useEffect(() => {
+    fetch('/data/schedule.json')
+      .then(res => res.json())
+      .then(data => setScheduleConfig(data))
+      .catch(err => console.warn('Could not load schedule config:', err));
+  }, []);
 
   useEffect(() => {
     const wrapper = eventFigureWrapper.current;
@@ -84,17 +102,17 @@ const Events = ({ user }) => {
             </NavLink>
           </div>
           <div className={cx('subtitle', styles['header-subtitle'])}>
-            <h2>Feb. 16-25</h2>
-            <div>2K26</div>
+            <h2>{scheduleConfig.eventDates}</h2>
+            <div>{scheduleConfig.year}</div>
           </div>
         </header>
         <main className={cx(styles['main-content'])}>
           <nav className={styles['schedule-nav']}>
             <ul className={styles.tabs}>
-              {['Mon.', 'Tue.', 'Wed.', 'Thu.'].map((day, i) => (
-                <ScheduleNavBtn key={i}
-                  currentDay={currentDay} day={i}
-                  label={day} handleDayChange={setCurrentDay} />
+              {scheduleConfig.days.map((day) => (
+                <ScheduleNavBtn key={day.id}
+                  currentDay={currentDay} day={day.id}
+                  label={day.label} handleDayChange={setCurrentDay} />
               ))}
             </ul>
           </nav>
@@ -109,14 +127,15 @@ const Events = ({ user }) => {
               </div>
             </div>
             <ul className={styles['event-list']}>
-              {Object.keys(events).filter(id => events[id].day === currentDay)
-                .sort(timeCompare)
-                .map(id => <EventLI key={id} {...events[id]} handleHover={setActiveEventId} handleClick={() => { console.log('Clicked:', id); setSelectedEventId(id); }} />)}
+              {(scheduleConfig.days[currentDay]?.events || []).map(event => (
+                <EventLI key={event.id} {...event} handleHover={setActiveEventId} />
+              ))}
             </ul>
             <div className={styles['event-figures']}>
               <div className={styles.figures}>
-                {Object.keys(events).filter(id => events[id].day === currentDay)
-                  .map(id => <EventFigure key={id} {...events[id]} isActive={activeEventId === id} />)}
+                {(scheduleConfig.days[currentDay]?.events || []).map(event => (
+                  <EventFigure key={event.id} {...event} isActive={activeEventId === event.id} />
+                ))}
               </div>
             </div>
           </section>
@@ -126,11 +145,6 @@ const Events = ({ user }) => {
         </div>
       </motion.div>
 
-      <AnimatePresence mode="wait">
-        {selectedEvent && (
-          <EventModal key="event-modal" event={selectedEvent} onClose={() => setSelectedEventId(null)} />
-        )}
-      </AnimatePresence>
     </>
   )
 }
@@ -145,21 +159,13 @@ const ScheduleNavBtn = ({ day, currentDay, handleDayChange, label }) => (
   </li>
 )
 
-const EventLI = ({ id, title, type, isRegistrationOpen, venue, time, handleHover, handleClick }) => {
+const EventLI = ({ id, title, type, isRegistrationOpen, venue, time, handleHover }) => {
   return (
-    <li
-      className={cx(styles['event-li'])}
-      style={{ cursor: 'pointer', position: 'relative', zIndex: 100 }}
-      onClick={() => {
-        alert('Clicked: ' + title); // Debug alert
-        handleClick();
-      }}
-    >
+    <li className={cx(styles['event-li'])}>
       <article
         className={styles['event-li-inner']}
         onMouseOut={e => { handleHover(null) }}
         onMouseOver={e => { handleHover(id) }}
-        style={{ pointerEvents: 'none' }} // Let clicks go through to li
       >
         <div className={styles.title}>
           {type === 'Contest'
@@ -287,48 +293,35 @@ const EventModal = ({ event, onClose }) => {
           ✕
         </button>
 
-        {/* Image Section */}
-        <div
-          style={{
-            width: '100%',
-            height: isMobile ? '180px' : '220px',
-            position: 'relative',
-            overflow: 'hidden',
-            background: 'linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)',
-          }}
-        >
-          {event.figureSrc ? (
-            <>
-              <img
-                src={event.figureSrc}
-                alt={event.title}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  opacity: 0.9,
-                }}
-              />
-              {/* Gradient overlay */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(0deg, #1a1a1a 0%, transparent 50%)',
-              }} />
-            </>
-          ) : (
-            <div style={{
+        {/* Image Section - only show if there's an image */}
+        {event.figureSrc && event.figureSrc.length > 0 && (
+          <div
+            style={{
               width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              opacity: 0.5,
-            }}>
-              <img src={TrophyIcon} alt="Trophy" style={{ width: '80px', height: 'auto' }} />
-            </div>
-          )}
-        </div>
+              height: isMobile ? '180px' : '220px',
+              position: 'relative',
+              overflow: 'hidden',
+              background: 'linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)',
+            }}
+          >
+            <img
+              src={event.figureSrc}
+              alt={event.title}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.9,
+              }}
+            />
+            {/* Gradient overlay */}
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(0deg, #1a1a1a 0%, transparent 50%)',
+            }} />
+          </div>
+        )}
 
         {/* Content Section */}
         <div

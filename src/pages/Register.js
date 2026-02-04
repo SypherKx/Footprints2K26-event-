@@ -27,17 +27,20 @@ const EventModal = ({ event, onClose }) => {
   };
 
   const contentStyle = {
-    background: 'linear-gradient(145deg, rgba(30, 30, 30, 0.98), rgba(15, 15, 15, 0.98))',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    boxShadow: '0 30px 60px -15px rgba(0, 0, 0, 0.8)',
-    borderRadius: '24px',
+    background: 'rgba(255, 255, 255, 0.05)',
+    backdropFilter: 'blur(12px)',
+    WebkitBackdropFilter: 'blur(12px)',
+    borderRadius: '20px',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0px 0px rgba(255, 255, 255, 0);',
+    position: 'relative',
+    overflow: 'hidden',
     width: '100%',
     maxWidth: '850px',
     maxHeight: '85vh',
     overflowY: 'auto',
     display: 'flex',
     flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
-    position: 'relative',
     color: 'white',
   };
 

@@ -5,6 +5,7 @@ import Home from "./Home";
 import Events from "./Events";
 import Gallery from "./Gallery";
 import Register from "./Register";
+import Games from "./Games";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function AnimatedRoutes() {
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/games" element={<Games />} />
       </Routes>
     </AnimatePresence>
   );

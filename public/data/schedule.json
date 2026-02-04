@@ -1,0 +1,70 @@
+{
+    "eventDates": "Feb. 16-25",
+    "year": "2K26",
+    "days": [
+        {
+            "id": 0,
+            "label": "Mon.",
+            "fullName": "Monday",
+            "date": "Feb 16",
+            "events": [
+                {
+                    "id": "day0_event1",
+                    "title": "To Be Announced",
+                    "time": "TBA",
+                    "venue": "TBA",
+                    "type": "Sport",
+                    "category": "Open"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "label": "Tue.",
+            "fullName": "Tuesday",
+            "date": "Feb 17",
+            "events": [
+                {
+                    "id": "day1_event1",
+                    "title": "To Be Announced",
+                    "time": "TBA",
+                    "venue": "TBA",
+                    "type": "Sport",
+                    "category": "Open"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "label": "Wed.",
+            "fullName": "Wednesday",
+            "date": "Feb 18",
+            "events": [
+                {
+                    "id": "day2_event1",
+                    "title": "this is to be",
+                    "time": "TBA",
+                    "venue": "TBA",
+                    "type": "Sport",
+                    "category": "Open"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "label": "Thu.",
+            "fullName": "Thursday",
+            "date": "Feb 19",
+            "events": [
+                {
+                    "id": "day3_event1",
+                    "title": "To Be Announced",
+                    "time": "TBA",
+                    "venue": "TBA",
+                    "type": "Sport",
+                    "category": "Open"
+                }
+            ]
+        }
+    ]
+}
