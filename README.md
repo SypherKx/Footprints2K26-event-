@@ -1,80 +1,185 @@
-# FOOTPRINTS 2K26 🏆
+# 🏆 Footprints 2K26 - Annual Sports Fest Website
 
-**FOOTPRINTS** is the premier annual sports festival of **PSIT Kanpur**, a celebration of passion, perseverance, and athletic excellence. Where every match leaves a mark and every player creates a legacy. 
+<div align="center">
 
-**FOOTPRINTS 2K26** is designed to bring together the best athletes to compete, connect, and celebrate the spirit of sportsmanship.
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-3.14.2-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-9.20.0-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![SASS](https://img.shields.io/badge/SASS-1.62.0-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10.18.0-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-## 🚀 About The Fest
+**Official Website for Footprints 2K26 - The Annual Sports Festival**
 
-Footprints is not just a tournament; it's an emotion. It hosts a wide array of sports including Cricket, Football, Basketball, Volleyball, Badminton, and many more. The website serves as the central hub for the fest, handling everything from registration to live updates.
+[🌐 Live Demo](#) • [📋 Features](#-features) • [🚀 Getting Started](#-getting-started) • [📁 Project Structure](#-project-structure)
+
+</div>
+
+---
+
+## 📖 About
+
+**Footprints 2K26** is the official website for the annual sports festival scheduled for **February 16, 2026**. This modern, responsive web application serves as the central hub for event information, registrations, schedules, and more.
+
+---
 
 ## ✨ Features
 
-- **🏆 Dynamic Event Hub**: Explore various sports events, check schedules, and rules.
-- **🔐 Secure Authentication**: Seamless Sign In and Sign Up using Firebase Authentication.
-- **👤 User Profiles**: personalized dashboard for participants to manage their registrations and view their status.
-- **📸 Gallery**: A visual journey through the best moments of past events.
-- **🤝 Sponsors Section**:       showcasing the brands that support us.
-- **⚡ Admin Panel**: robust tools for organizers to manage teams, scores, and logistics.
-- **🎨 Interactive UI**: A modern, dark-themed aesthetic with smooth animations powered by **Framer Motion**.
+### 🎯 Core Features
+- **🏠 Dynamic Homepage** - Immersive hero section with video background and countdown timer
+- **🎪 Events Showcase** - Interactive event cards with day-wise filtering and detailed modals
+- **📝 Registration System** - Gender-based registration with unique links for each event
+- **🖼️ Gallery** - Showcase of previous event highlights with smooth animations
+- **👥 Team Section** - Meet the coordinators and organizers
 
-## 🛠️ Tech Stack
+### 🎨 Design & UX
+- **Smooth Animations** - GSAP and Framer Motion powered transitions
+- **Responsive Design** - Mobile-first approach, works on all devices
+- **Modern Aesthetics** - Dark theme with vibrant accent colors
+- **Custom Scrolling** - Smooth scroll behavior throughout the site
 
-This project is built with a modern frontend stack ensuring performance and scalability:
+### 🔧 Technical Highlights
+- **Firebase Integration** - Backend services for data management
+- **Vercel Analytics** - Performance monitoring and insights
+- **SCSS Modules** - Scoped, maintainable styling
+- **QR Code Generation** - For event tickets and registrations
 
-- **Frontend**: [React.js](https://reactjs.org/)
-- **Styling**: [SCSS](https://sass-lang.com/) (Modules), Vanilla CSS
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Routing**: [React Router](https://reactrouter.com/)
-- **Backend-as-a-Service**: [Firebase](https://firebase.google.com/) (Auth, Firestore)
-- **State Management**: React Hooks (Context API)
+---
 
-## 🏃‍♂️ Getting Started
-
-Follow these steps to set up the project locally:
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
+- Node.js (v16 or higher)
 - npm or yarn
 
 ### Installation
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/SypherKx/Footprints2K26.git
-    cd Footprints2K26
-    ```
+```bash
+# Clone the repository
+git clone https://github.com/SypherKx/Footprints2K26-event-.git
 
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
+# Navigate to project directory
+cd Footprints2K26-event-
 
-3.  **Configure Environment Variables**
-    Create a `.env` file in the root directory and add your Firebase credentials:
-    ```env
-    REACT_APP_API_KEY=your_api_key
-    REACT_APP_AUTH_DOMAIN=your_auth_domain
-    REACT_APP_PROJECT_ID=your_project_id
-    REACT_APP_STORAGE_BUCKET=your_storage_bucket
-    REACT_APP_MESSAGING_SENDER_ID=your_sender_id
-    REACT_APP_APP_ID=your_app_id
-    ```
+# Install dependencies
+npm install
 
-4.  **Run the development server**
-    ```bash
-    npm start
-    ```
-    The app will open at `http://localhost:3000`.
+# Start development server
+npm start
+```
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs development server at `localhost:3000` |
+| `npm run build` | Creates production build in `build/` folder |
+| `npm test` | Launches test runner |
+
+---
+
+## 📁 Project Structure
+
+```
+📦 FootPrints-Test
+├── 📂 public/              # Static assets & index.html
+├── 📂 src/
+│   ├── 📂 components/      # Reusable UI components
+│   │   ├── Hero.js         # Homepage hero section
+│   │   ├── Carousel.js     # Image carousel
+│   │   ├── CountdownTimer.js
+│   │   └── ...
+│   ├── 📂 pages/           # Route-based pages
+│   │   ├── Home.js         # Landing page
+│   │   ├── Events.js       # Events listing
+│   │   ├── Gallery.js      # Photo gallery
+│   │   ├── Register.js     # Registration form
+│   │   └── Admin.js        # Admin dashboard
+│   ├── 📂 layouts/         # Page layout components
+│   ├── 📂 styles/          # Global SCSS styles
+│   ├── 📂 data/            # Static data & configurations
+│   ├── 📂 media/           # Images, videos & assets
+│   ├── 📂 hooks/           # Custom React hooks
+│   ├── 📂 config/          # App configuration
+│   └── App.js              # Root component
+├── 📄 package.json
+└── 📄 README.md
+```
+
+---
+
+## 🎪 Events
+
+The website showcases various sports events including:
+
+| Sport | Category | Registration |
+|-------|----------|--------------|
+| ⚽ Football | Male / Female | ✅ Open |
+| 🏀 Basketball | Male / Female | ✅ Open |
+| 🏐 Volleyball | Male / Female | ✅ Open |
+| 🏸 Badminton | Male / Female | ✅ Open |
+| 🏃 Sprints | Male / Female | ✅ Open |
+| 🤸 Kho-Kho | Male / Female | ✅ Open |
+| 🚴 Slow Cycle | Male / Female | ✅ Open |
+| 🤼 Kabaddi | Male / Female | ✅ Open |
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React 18, SCSS Modules |
+| **Animations** | GSAP, Framer Motion |
+| **Routing** | React Router v6 |
+| **Backend** | Firebase |
+| **Styling** | SASS, TailwindCSS |
+| **Analytics** | Vercel Analytics |
+| **Icons** | React Icons |
+
+---
+
+## 👥 Website Team
+
+| Name | Role |
+|------|------|
+| **Samarth Bhatt** | Website Head |
+| **Karan Pratap Singh** | Website Co Head |
+| **Divyansh Vijay** | Website Co Head |
+| **Suryansh Sharan** | Website Co Head |
+| **Arpit Bajpai** | Joint Website Head |
+
+---
+
+## 📅 Event Schedule
+
+- **Event Date:** February 16, 2026
+- **Duration:** Multi-day sports extravaganza
+- **Venue:** To Be Announced
+
+---
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 👨‍💻 Author
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-**Karan Pratap Singh (SypherKx)**
-- 🌐 GitHub: [@SypherKx](https://github.com/SypherKx)
+---
 
----hey guys 
-*Handcrafted with 🖤 by SypherKx ~ © 2K26 FOOTPRINTS PSIT KANPUR*
+## 📄 License
+
+This project is proprietary and developed for Footprints 2K26.
+
+---
+
+<div align="center">
+
+**Made with ❤️ by the Footprints 2K26 Web Team**
+
+⭐ Star this repo if you find it helpful!
+
+</div>
