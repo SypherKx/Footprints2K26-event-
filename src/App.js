@@ -5,6 +5,7 @@ import "./styles/index.scss";
 import Alert from "./components/Alert";
 import { ENABLE_AUTH } from "./config/featureFlags";
 import AnimatedRoutes from "./pages/AnimatedRoutes";
+import SmoothScroll from "./components/SmoothScroll";
 
 // Default auth state when Firebase is disabled
 const defaultAuthState = {
@@ -61,17 +62,20 @@ function App() {
   }, [alertMsg]);
 
   return (
-    <Layout user={authUser}>
-      <Alert message={alertMsg} severity={alertSeverity} />
-      <AnimatedRoutes
-        authUser={authUser}
-        handleLogout={handleLogout}
-        updateAuthUserAttr={updateAuthUserAttr}
-        checkingStatus={checkingStatus}
-      />
-      <Analytics />
-    </Layout>
+    <SmoothScroll>
+      <Layout user={authUser}>
+        <Alert message={alertMsg} severity={alertSeverity} />
+        <AnimatedRoutes
+          authUser={authUser}
+          handleLogout={handleLogout}
+          updateAuthUserAttr={updateAuthUserAttr}
+          checkingStatus={checkingStatus}
+        />
+        <Analytics />
+      </Layout>
+    </SmoothScroll>
   );
 }
 
 export default App;
+

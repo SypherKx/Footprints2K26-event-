@@ -1,0 +1,234 @@
+.loaderContainer {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    gap: 2rem;
+    overflow: hidden;
+
+    // Animated background gradient
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(151, 75, 96, 0.1) 0%, transparent 50%);
+        animation: rotateGradient 20s linear infinite;
+    }
+
+    // Subtle grid pattern
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.5;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.textWrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+
+.textBackground,
+.textForeground {
+    font-family: 'Antonio', sans-serif;
+    font-size: clamp(2.5rem, 10vw, 8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    user-select: none;
+}
+
+.textBackground {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    position: relative;
+
+    // Shimmer effect
+    &::after {
+        content: 'FOOTPRINTS';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmer 2s infinite;
+        background-size: 200% 100%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.textForeground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #974B60 0%, #c76b83 50%, #974B60 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: clip-path 0.15s ease-out;
+    text-shadow: 0 0 40px rgba(151, 75, 96, 0.5);
+}
+
+.loadingInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+// Progress bar
+.progressBar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #974B60, #c76b83);
+        border-radius: 10px;
+        transition: width 0.3s ease;
+    }
+}
+
+.percentage {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.2em;
+    min-width: 4ch;
+    text-align: center;
+}
+
+// Loading text
+.loadingText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+// Floating particles
+.particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(151, 75, 96, 0.3);
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+
+    &:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+        left: 20%;
+        animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+        left: 30%;
+        animation-delay: 2s;
+    }
+
+    &:nth-child(4) {
+        left: 40%;
+        animation-delay: 3s;
+    }
+
+    &:nth-child(5) {
+        left: 60%;
+        animation-delay: 4s;
+    }
+
+    &:nth-child(6) {
+        left: 70%;
+        animation-delay: 5s;
+    }
+
+    &:nth-child(7) {
+        left: 80%;
+        animation-delay: 6s;
+    }
+
+    &:nth-child(8) {
+        left: 90%;
+        animation-delay: 7s;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) scale(1);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(10vh) scale(1);
+    }
+
+    100% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+}

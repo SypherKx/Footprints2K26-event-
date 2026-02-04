@@ -7,10 +7,123 @@ import FootprintsLogo from '../media/footprints-font.webp';
 import PsitLogo from '../media/psit-logo-new.png';
 import Logo2K26 from '../media/2k26-stylized.png';
 import styles from './Hero.module.scss';
+import VideoLoader from './VideoLoader';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Animation variants for staggered logo entrance
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const logoVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.9
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+const scrollIndicatorVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1.2,
+      duration: 0.5
+    }
+  },
+  bounce: {
+    y: [0, 10, 0],
+    transition: {
+      duration: 1.5,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [showContent, setShowContent] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const videoRef = useRef(null);
+  const heroRef = useRef(null);
+
+  // Handle mouse move for parallax effect
+  const handleMouseMove = (e) => {
+    if (!heroRef.current) return;
+
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+
+    setMousePosition({ x, y });
+  };
+
+  // Reset parallax when mouse leaves
+  const handleMouseLeave = () => {
+    setMousePosition({ x: 0, y: 0 });
+  };
+
+  // Handle video loading progress
+  const handleProgress = () => {
+    const video = videoRef.current;
+    if (video && video.buffered.length > 0) {
+      const bufferedEnd = video.buffered.end(video.buffered.length - 1);
+      const duration = video.duration;
+      if (duration > 0) {
+        const progress = (bufferedEnd / duration) * 100;
+        setLoadProgress(Math.min(progress, 100));
+      }
+    }
+  };
+
+  // Handle when video can play
+  const handleCanPlay = () => {
+    // Give a smooth transition before hiding loader
+    setLoadProgress(100);
+    setTimeout(() => {
+      setIsLoading(false);
+      // Trigger content animations after loader disappears
+      setTimeout(() => setShowContent(true), 300);
+    }, 500);
+  };
+
+  // Lock scroll during loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    };
+  }, [isLoading]);
 
   useEffect(() => {
     const navEl = document.getElementById('nav');
@@ -69,69 +182,129 @@ const Hero = () => {
   }
 
   return (
-    <div className={styles.hero} id="hero" onClick={toggleAudio}>
-      <div className={styles.grain}></div>
-      <video
-        ref={videoRef}
-        draggable="false"
-        className={styles['hero-bg']}
-        autoPlay={true}
-        muted={isMuted}
-        loop={true}
-        playsInline={true}
-        preload="auto"
-        poster={Logo2K26}
+    <>
+      {/* Video Loader with AnimatePresence for smooth exit */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <VideoLoader progress={loadProgress} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div
+        ref={heroRef}
+        className={styles.hero}
+        id="hero"
+        onClick={toggleAudio}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
       >
-        <source src={HeroVideo} />
-      </video>
-      <div className={styles.content}>
-        <div className={styles.logo}>
-          <div className={styles['logo-container']}>
+        <div className={styles.grain}></div>
+        <video
+          ref={videoRef}
+          draggable="false"
+          className={styles['hero-bg']}
+          autoPlay={true}
+          muted={isMuted}
+          loop={true}
+          playsInline={true}
+          preload="auto"
+          poster={Logo2K26}
+          onProgress={handleProgress}
+          onCanPlayThrough={handleCanPlay}
+        >
+          <source src={HeroVideo} />
+        </video>
+        <div className={styles.content}>
+          <motion.div
+            className={styles.logo}
+            variants={containerVariants}
+            initial="hidden"
+            animate={showContent ? "visible" : "hidden"}
+            style={{
+              transform: `perspective(1000px) rotateX(${mousePosition.y * -8}deg) rotateY(${mousePosition.x * 8}deg)`,
+              transformStyle: 'preserve-3d',
+              transition: 'transform 0.1s ease-out'
+            }}
+          >
+            <div className={styles['logo-container']} style={{ transformStyle: 'preserve-3d' }}>
 
-            {/* PSIT Logo - Above */}
-            <img
-              draggable="false"
-              src={PsitLogo}
-              alt="PSIT Logo"
-              className={styles['psit-logo']}
-              fetchPriority="high"
-              loading="eager"
-            />
+              {/* PSIT Logo - Above (front layer) */}
+              <motion.img
+                variants={logoVariants}
+                draggable="false"
+                src={PsitLogo}
+                alt="PSIT Logo"
+                className={styles['psit-logo']}
+                fetchPriority="high"
+                loading="eager"
+                style={{
+                  transform: `translateZ(60px) translateX(${mousePosition.x * 15}px) translateY(${mousePosition.y * 15}px)`,
+                  transition: 'transform 0.15s ease-out'
+                }}
+              />
 
-            {/* Main Footprints Logo */}
-            <img
-              draggable="false"
-              src={FootprintsLogo}
-              alt="Footprints 2K26"
-              className={styles['main-logo']}
-              fetchPriority="high"
-              loading="eager"
-            />
+              {/* Main Footprints Logo (middle layer) */}
+              <motion.img
+                variants={logoVariants}
+                draggable="false"
+                src={FootprintsLogo}
+                alt="Footprints 2K26"
+                className={styles['main-logo']}
+                fetchPriority="high"
+                loading="eager"
+                style={{
+                  transform: `translateZ(30px) translateX(${mousePosition.x * 8}px) translateY(${mousePosition.y * 8}px)`,
+                  transition: 'transform 0.15s ease-out'
+                }}
+              />
 
-            {/* 2K26 Logo - Below and Right */}
-            <img
-              draggable="false"
-              src={Logo2K26}
-              alt="2K26"
-              className={styles['logo-2k26']}
-            />
-          </div>
+              {/* 2K26 Logo - Below (back layer) */}
+              <motion.img
+                variants={logoVariants}
+                draggable="false"
+                src={Logo2K26}
+                alt="2K26"
+                className={styles['logo-2k26']}
+                style={{
+                  transform: `translateZ(10px) translateX(${mousePosition.x * 4}px) translateY(${mousePosition.y * 4}px)`,
+                  transition: 'transform 0.15s ease-out'
+                }}
+              />
+            </div>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Audio Toggle Button */}
-      <button
-        className={styles.audioControl}
-        onClick={(e) => { e.stopPropagation(); toggleAudio(); }}
-        aria-label={isMuted ? "Unmute video" : "Mute video"}
-      >
-        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-      </button>
+        {/* Audio Toggle Button */}
+        <motion.button
+          className={styles.audioControl}
+          onClick={(e) => { e.stopPropagation(); toggleAudio(); }}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={showContent ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ delay: 1, duration: 0.4 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+        </motion.button>
 
-      <div className={styles.scrollDown} aria-hidden='true'>
-        <ScrollDownIcon />
+        <motion.div
+          className={styles.scrollDown}
+          aria-hidden='true'
+          variants={scrollIndicatorVariants}
+          initial="hidden"
+          animate={showContent ? ["visible", "bounce"] : "hidden"}
+        >
+          <ScrollDownIcon />
+        </motion.div>
       </div>
-    </div>
+    </>
   )
 }
 

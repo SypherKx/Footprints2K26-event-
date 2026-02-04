@@ -1,11 +1,23 @@
 import { NavLink } from 'react-router-dom';
 import styles from './HighlightCard.module.scss';
+import { motion } from 'framer-motion';
 
 const HighlightCard = ({ figureSrc, title, desc, type, isRegistrationOpen, user }) => (
-  <article className={styles.card}>
-    <figure>
+  <motion.article
+    className={styles.card}
+    whileHover={{
+      y: -8,
+      scale: 1.02,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }}
+    whileTap={{ scale: 0.98 }}
+  >
+    <motion.figure
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.4 }}
+    >
       <img draggable="false" alt='' src={figureSrc} loading="lazy" decoding="async" />
-    </figure>
+    </motion.figure>
     <main>
       <h3 className={styles.cardTitle}>{title}</h3>
       <div className={styles.cardSubtitle}>
@@ -19,8 +31,9 @@ const HighlightCard = ({ figureSrc, title, desc, type, isRegistrationOpen, user 
       user ? <NavLink className={styles.link} to='/register'>Register</NavLink>
         : <NavLink className={styles.link} to='/signup'>Register</NavLink>
     )}
-  </article>
+  </motion.article>
 )
 
 export default HighlightCard;
+
 

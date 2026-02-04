@@ -1,6 +1,8 @@
+@import "tailwindcss";
+
 :root {
     --nav-height: 4.1425rem;
-    
+
     // colors
     --white1: #eee;
     --white2: #d8d8d8;
@@ -18,12 +20,17 @@
     height: 6px;
     width: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #c97a90;
 }
 
-a,button,input,select,textarea {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+a,
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none;
 }
 
@@ -50,7 +57,7 @@ body {
 
     @media screen and (max-width: 699px) {
         padding-left: 0.8rem;
-        padding-right: 0.8rem;        
+        padding-right: 0.8rem;
     }
 }
 
@@ -105,27 +112,34 @@ header.page-header {
             --heading-font-size: 10rem;
         }
     }
+
     @media screen and (max-width: 999px) {
         h1.heading {
             --heading-font-size: 20vw;
         }
+
         h2.heading {
             --heading-font-size: 12vw;
         }
     }
+
     @media screen and (max-width: 760px) {
         h1.heading {
             --heading-font-size: 24vw;
         }
+
         h2.heading {
             --heading-font-size: 15vw;
         }
     }
+
     @media screen and (max-width: 700px) {
         height: 60vh;
     }
 }
-.page-header.form-header, .page-header.small-header {
+
+.page-header.form-header,
+.page-header.small-header {
     height: unset;
     --heading-font-size: 10vw;
 
@@ -201,7 +215,8 @@ header.page-header {
     background-color: var(--bg-color);
     color: var(--txt-color);
 
-    .btn-text, .btn-subtitle {
+    .btn-text,
+    .btn-subtitle {
         z-index: 2;
     }
 
@@ -216,8 +231,8 @@ header.page-header {
         font-weight: 500;
         font-size: 0.75rem;
     }
-    
-    > svg {
+
+    >svg {
         width: 1.5rem;
         height: 1.5rem;
         position: absolute;
@@ -227,6 +242,7 @@ header.page-header {
         fill: var(--txt-color);
     }
 }
+
 .btn::before {
     content: '';
     position: absolute;
@@ -240,12 +256,17 @@ header.page-header {
     transition: transform .2s cubic-bezier(0.215, 0.61, 0.355, 1);
     z-index: 0;
 }
-.btn:hover, .btn:focus {
-    --txt-color: var(--hover-txt-color)!important;
+
+.btn:hover,
+.btn:focus {
+    --txt-color: var(--hover-txt-color) !important;
 }
-.btn:hover::before, .btn:focus::before {
+
+.btn:hover::before,
+.btn:focus::before {
     transform: translate3d(0, 0, 0);
 }
+
 .btn.secondary {
     --bg-color: transparent;
     --border-color: black;
@@ -254,11 +275,13 @@ header.page-header {
     --hover-txt: #fff;
     --hover-txt-color: #fff;
 }
+
 .btn[disabled] {
-    --txt-color: var(--hover-txt-color)!important;
+    --txt-color: var(--hover-txt-color) !important;
     --hover-bg: #222;
 }
-.btn[disabled]::before {   
+
+.btn[disabled]::before {
     transform: translate3d(0, 0, 0);
 }
 
@@ -270,4 +293,50 @@ footer {
 
 .page-transition {
     transform-origin: left;
+}
+
+// Smooth Scroll Wrapper
+.smooth-scroll-wrapper {
+    width: 100%;
+}
+
+// Animation utility classes for GSAP ScrollTrigger
+.animate-section {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.animate-stagger {
+    .stagger-item {
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+}
+
+.parallax-bg {
+    will-change: transform;
+}
+
+// Smooth scrolling for the entire page
+html {
+    scroll-behavior: smooth;
+}
+
+// Optimize animations for performance
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

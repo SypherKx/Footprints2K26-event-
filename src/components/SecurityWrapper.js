@@ -4,6 +4,11 @@ import { useEffect } from "react";
 
 export default function SecurityWrapper({ children }) {
     useEffect(() => {
+        // Skip security features in development
+        if (process.env.NODE_ENV === 'development') {
+            return;
+        }
+
         const handleContextMenu = (e) => e.preventDefault();
 
         const handleKeyDown = (e) => {

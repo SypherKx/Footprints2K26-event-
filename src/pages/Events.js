@@ -516,6 +516,7 @@ const EventModal = ({ event, onClose }) => {
               rel="noopener noreferrer"
               onClick={(e) => {
                 e.stopPropagation();
+                // Force open in new tab
                 window.open('https://www.ignitia.in/events', '_blank');
               }}
               style={{
@@ -538,8 +539,9 @@ const EventModal = ({ event, onClose }) => {
                 cursor: 'pointer',
                 marginTop: '4px',
                 transition: 'all 0.25s ease',
-                pointerEvents: 'auto',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 30px rgba(151, 75, 96, 0.45)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 25px rgba(151, 75, 96, 0.35)'; }}
             >
               <img src={TrophyIcon} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
               REGISTER NOW

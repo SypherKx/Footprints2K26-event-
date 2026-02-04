@@ -246,8 +246,14 @@ const EventModal = ({ event, onClose }) => {
           </div>
 
           <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-            <NavLink
-              to="/register"
+            <a
+              href="https://www.ignitia.in/events"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open('https://www.ignitia.in/events', '_blank');
+              }}
               style={registerButtonStyle}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'translateY(-3px)';
@@ -258,8 +264,8 @@ const EventModal = ({ event, onClose }) => {
                 e.target.style.boxShadow = '0 8px 25px rgba(151, 75, 96, 0.4)';
               }}
             >
-              🏆 Register Now
-            </NavLink>
+              Register Now
+            </a>
           </div>
         </div>
 
