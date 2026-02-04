@@ -192,6 +192,7 @@ const EventModal = ({ event, onClose }) => {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '1.25rem',
+            // background: 'rgba(255,255,255,0.05)',
             marginTop: '0.5rem',
           }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>

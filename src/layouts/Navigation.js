@@ -22,7 +22,7 @@ const NavItem = ({ name, link, handleClick }) => (
   </NavLink>
 )
 
-const Navigation = ({ user }) => {
+const Navigation = ({ user = { user: null, admin: false } }) => {
   const toggleMobileNav = () => {
     const mobileNav = document.querySelector(`.${styles.mobile}`);
     const mobileNavBtns = document.querySelectorAll(`.${styles['mobile-hamburger-btn']}`);
@@ -44,9 +44,9 @@ const Navigation = ({ user }) => {
           <NavLink to={'/'}>FOOTPRINTS</NavLink>
         </div>
         <div className={cx(styles["router-links"], styles.desktop)}>
-          {links.filter(link => !link.onlyMobile && (!link.auth || user.user)).map(link => <NavItem key={link.name} {...link} />)}
+          {links.filter(link => !link.onlyMobile && (!link.auth || user?.user)).map(link => <NavItem key={link.name} {...link} />)}
 
-          {user.user && user.admin && (
+          {user?.user && user?.admin && (
             <NavItem link={'/admin'} name={'Admin'} />
           )}
         </div>
@@ -61,11 +61,11 @@ const Navigation = ({ user }) => {
           Close
         </button>
         <ul className={styles["router-links"]}>
-          {links.filter(link => !link.auth || user.user).map(link =>
+          {links.filter(link => !link.auth || user?.user).map(link =>
             <li key={link.name}><NavItem handleClick={toggleMobileNav} {...link} /></li>
           )}
 
-          {user.user && user.admin && (
+          {user?.user && user?.admin && (
             <li key={'noauth'}><NavItem handleClick={toggleMobileNav}
               {...{ link: '/admin', name: 'Admin' }} /></li>
           )}

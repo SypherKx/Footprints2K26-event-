@@ -9,41 +9,41 @@ const tags = [
   'TRIUMPH', 'RECORDS', 'HISTORY', 'LEGENDS', 'ENERGY', 'MEMORIES', 'CHAMPIONS'
 ]
 
-// Dynamically import all images from the gallery folder
-function importAll(r) {
-  try {
-    return r.keys().map(r);
-  } catch (e) {
-    console.warn("Gallery images not found or require.context failed", e);
-    return [];
-  }
-}
 
-// Use require.context to load images
-// Note: This relies on Webpack (standard in Create React App)
-const rawImages = importAll(require.context('../media/gallery', false, /\.(png|jpe?g|svg|JPG|JPEG|PNG|SVG)$/));
+const imageFiles = [
+  'IMGL2178.JPG', 'IMGL2959.JPG', 'IMGL2983.JPG', 'IMGL3052.JPG', 'IMGL3107.JPG',
+  'IMGL3164.JPG', 'IMGL3190.JPG', 'IMGL3196.JPG', 'IMGL3219.JPG', 'IMGL3226.JPG',
+  'IMGL3255.JPG', 'IMGL3268.JPG', 'IMGL3286.JPG', 'IMGL3291.JPG', 'IMGL3297.JPG',
+  'IMGL3306.JPG', 'IMGL3332.JPG', 'IMGL3372.JPG', 'IMGL3374.JPG', 'IMGL3487.JPG',
+  'IMGL3496.JPG', 'IMGL3507.JPG', 'IMGL3574.JPG', 'IMGL3730.JPG', 'IMGL3749.JPG',
+  'IMGL3750.JPG', 'IMGL3783.JPG', 'IMGL3800.JPG', 'IMGL3807.JPG', 'IMGL3814.JPG',
+  'IMGL3857.JPG', 'IMGL3864.JPG', 'IMGL3879.JPG', 'IMGL3883.JPG', 'IMGL3888.JPG',
+  'IMGL3895.JPG', 'IMGL3901.JPG', 'IMGL3907.JPG', 'IMGL3913.JPG', 'IMGL3942.JPG',
+  'IMGL3946.JPG', 'IMGL3950.JPG', 'IMGL3973.JPG', 'IMGL3984.JPG', 'IMGL3997.JPG',
+  'IMGL4008.JPG', 'IMGL4014.JPG', 'IMGL4022.JPG', 'IMGL4030.JPG', 'IMGL4036.JPG',
+  'IMGL4059.JPG', 'IMGL4075.JPG', 'IMGL4083.JPG', 'IMGL4099.JPG'
+];
 
-// Shuffle images for random placement
-const shuffledImages = rawImages
+const shuffledImages = imageFiles
   .map(value => ({ value, sort: Math.random() }))
   .sort((a, b) => a.sort - b.sort)
   .map(({ value }) => value);
 
-const galleryImages = shuffledImages.map((img, index) => ({
-  src: img,
+const galleryImages = shuffledImages.map((filename, index) => ({
+  src: `/media/gallery/${filename}`,
   alt: `Gallery Moment ${index + 1}`
 }));
 
 const Gallery = ({ user }) => {
-  const [segments, setSegments] = useState(35);
+  const [segments, setSegments] = useState(28); // Reduced from 35 for better performance
 
   useEffect(() => {
     const handleResize = () => {
-      // Increase segments on smaller screens to make items closer (reduce spacing)
+      // Fewer segments = bigger tiles, better performance
       if (window.innerWidth < 600) {
-        setSegments(48); // Closer boxes on mobile
+        setSegments(22); // Bigger tiles on mobile
       } else {
-        setSegments(35); // Default spacing on desktop
+        setSegments(28); // Bigger tiles on desktop (was 35)
       }
     };
 
