@@ -123,7 +123,7 @@ The website showcases **14 sports events** including:
 | 🤼 Kabaddi | Male / Female | ✅ Open |
 | 🏏 Cricket | Male / Female | ✅ Open |
 | 🏓 Table Tennis | Male / Female | ✅ Open |
-| ♟️ Chess | Open | ✅ Open |
+| ♟️ Chess | Male / Female | ✅ Open |
 | 🎾 Tennis | Male / Female | ✅ Open |
 | 🏊 Swimming | Male / Female | ✅ Open |
 | 🏋️ Arm Wrestling | Male / Female | ✅ Open |
