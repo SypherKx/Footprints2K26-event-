@@ -109,7 +109,7 @@ npm start
 
 ## 🎪 Events
 
-The website showcases various sports events including:
+The website showcases **14 sports events** including:
 
 | Sport | Category | Registration |
 |-------|----------|--------------|
@@ -121,6 +121,12 @@ The website showcases various sports events including:
 | 🤸 Kho-Kho | Male / Female | ✅ Open |
 | 🚴 Slow Cycle | Male / Female | ✅ Open |
 | 🤼 Kabaddi | Male / Female | ✅ Open |
+| 🏏 Cricket | Male / Female | ✅ Open |
+| 🏓 Table Tennis | Male / Female | ✅ Open |
+| ♟️ Chess | Open | ✅ Open |
+| 🎾 Tennis | Male / Female | ✅ Open |
+| 🏊 Swimming | Male / Female | ✅ Open |
+| 🏋️ Arm Wrestling | Male / Female | ✅ Open |
 
 ---
 
@@ -138,15 +144,9 @@ The website showcases various sports events including:
 
 ---
 
-## 👥 Website Team
+## � Developer
 
-| Name | Role |
-|------|------|
-| **Samarth Bhatt** | Website Head |
-| **Karan Pratap Singh** | Website Co Head |
-| **Divyansh Vijay** | Website Co Head |
-| **Suryansh Sharan** | Website Co Head |
-| **Arpit Bajpai** | Joint Website Head |
+**Karan**
 
 ---
 
