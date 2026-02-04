@@ -70,45 +70,70 @@ const Hero = () => {
   const videoRef = useRef(null);
   const heroRef = useRef(null);
 
-  // Handle mouse move for parallax effect
+  // Handle input for parallax (unchanged)
   const handleMouseMove = (e) => {
     if (!heroRef.current) return;
-
     const rect = heroRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
     const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
-
     setMousePosition({ x, y });
   };
 
-  // Reset parallax when mouse leaves
   const handleMouseLeave = () => {
     setMousePosition({ x: 0, y: 0 });
   };
 
-  // Handle video loading progress
-  const handleProgress = () => {
-    const video = videoRef.current;
-    if (video && video.buffered.length > 0) {
-      const bufferedEnd = video.buffered.end(video.buffered.length - 1);
-      const duration = video.duration;
-      if (duration > 0) {
-        const progress = (bufferedEnd / duration) * 100;
-        setLoadProgress(Math.min(progress, 100));
-      }
-    }
-  };
+  // --- Optimistic Loader Logic ---
+  const [isReady, setIsReady] = useState(false);
 
-  // Handle when video can play
+  // 1. Synthetic Progress Timer
+  useEffect(() => {
+    // If ready, jump to 100% immediately
+    if (isReady) {
+      setLoadProgress(100);
+      return;
+    }
+
+    // Otherwise increment slowly up to 90%
+    const interval = setInterval(() => {
+      setLoadProgress(prev => {
+        // Random increment between 2-8%
+        const inc = Math.random() * 6 + 2;
+        const next = prev + inc;
+        // Stall at 90% until isReady becomes true
+        return next > 90 ? 90 : next;
+      });
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [isReady]);
+
+  // 2. Max Wait Time Fallback (2.5s)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // 3. Handle Completion
+  useEffect(() => {
+    if (loadProgress >= 100) {
+      // Small buffer before hiding loader for smoothness
+      const exitTimer = setTimeout(() => {
+        setIsLoading(false);
+        // Trigger content animations
+        setTimeout(() => setShowContent(true), 300);
+      }, 400);
+      return () => clearTimeout(exitTimer);
+    }
+  }, [loadProgress]);
+
+  // Video ready handler
   const handleCanPlay = () => {
-    // Give a smooth transition before hiding loader
-    setLoadProgress(100);
-    setTimeout(() => {
-      setIsLoading(false);
-      // Trigger content animations after loader disappears
-      setTimeout(() => setShowContent(true), 300);
-    }, 500);
+    setIsReady(true);
   };
+  // -------------------------------
 
   // Lock scroll during loading
   useEffect(() => {
@@ -119,13 +144,13 @@ const Hero = () => {
       document.body.style.overflow = '';
       document.body.style.height = '';
     }
-
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = '';
       document.body.style.height = '';
     };
   }, [isLoading]);
+
+
 
   useEffect(() => {
     const navEl = document.getElementById('nav');
@@ -217,7 +242,6 @@ const Hero = () => {
           playsInline={true}
           preload="auto"
           poster={HeroPoster}
-          onProgress={handleProgress}
           onCanPlayThrough={handleCanPlay}
         >
           <source src={HeroVideoWebM} type="video/webm" />
