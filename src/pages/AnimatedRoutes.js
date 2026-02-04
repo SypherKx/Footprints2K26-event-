@@ -6,7 +6,7 @@ import Home from "./Home";
 import Events from "./Events";
 import Gallery from "./Gallery";
 import Register from "./Register";
-import Sponsors from "./Sponsors";
+// import Sponsors from "./Sponsors";
 
 // Conditionally import auth-related components
 let ProtectedComponent = null;
@@ -18,10 +18,10 @@ let Admin = null;
 
 if (ENABLE_AUTH) {
   ProtectedComponent = require("../components/ProtectedRoute").default;
-  SignIn = require("./SignIn").default;
-  SignUp = require("./SignUp").default;
-  UpdateProfile = require("./UpdateProfile").default;
-  UserProfile = require("./UserProfile").default;
+  // SignIn = require("./SignIn").default;
+  // SignUp = require("./SignUp").default;
+  // UpdateProfile = require("./UpdateProfile").default;
+  // UserProfile = require("./UserProfile").default;
   Admin = require("./Admin").default;
 }
 
@@ -35,7 +35,7 @@ function AnimatedRoutes({ authUser, updateAuthUserAttr, handleLogout, checkingSt
         <Route path="/events" element={<Events user={authUser.user} />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/sponsors" element={<Sponsors />} />
+        {/* <Route path="/sponsors" element={<Sponsors />} /> */}
 
         {/* Auth routes - only rendered when ENABLE_AUTH is true */}
         {ENABLE_AUTH && (
