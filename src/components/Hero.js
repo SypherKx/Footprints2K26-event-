@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { ReactComponent as ScrollDownIcon } from '../media/icons/down.svg';
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
-import HeroVideo from '../media/new-background.mp4';
+import HeroVideoMp4 from '../media/new-background-compressed.mp4';
+import HeroVideoWebM from '../media/new-background.webm';
+import HeroPoster from '../media/video-poster.jpg';
 // import HeroImage from '../media/hero-image.png';
 import FootprintsLogo from '../media/footprints-font.webp';
 import PsitLogo from '../media/psit-logo-new.png';
@@ -214,11 +216,12 @@ const Hero = () => {
           loop={true}
           playsInline={true}
           preload="auto"
-          poster={Logo2K26}
+          poster={HeroPoster}
           onProgress={handleProgress}
           onCanPlayThrough={handleCanPlay}
         >
-          <source src={HeroVideo} />
+          <source src={HeroVideoWebM} type="video/webm" />
+          <source src={HeroVideoMp4} type="video/mp4" />
         </video>
         <div className={styles.content}>
           <motion.div

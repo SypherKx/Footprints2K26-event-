@@ -21,20 +21,20 @@ import imgLongJump from '../media/events/jumps_new.jpg';
 
 // Event Data with more details
 const EVENTS_DATA = [
-  { id: 1, name: "Football", img: imgFootball, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "The beautiful game - showcase your skills on the field." },
-  { id: 2, name: "Basketball", img: imgBasketball, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "Dribble, shoot, score - dominate the court." },
-  { id: 3, name: "Volleyball", img: imgVolleyball, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "Spike your way to victory." },
-  { id: 4, name: "Kabaddi", img: imgKabaddi, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "Traditional Indian sport of strength and strategy." },
-  { id: 5, name: "Kho-Kho", img: imgKhoKho, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "Speed and agility in this traditional tag game." },
-  { id: 6, name: "Sprint", img: imgSprint, category: "Male / Female", venue: "TBA", time: "TBA", price: "TBA", desc: "When speed takes over - race to the finish." },
-  { id: 7, name: "Slow Cycle", img: imgSlowCycle, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "Patient, precise, powerful - balance is key." },
-  { id: 8, name: "Throw", img: imgThrow, category: "Male / Female", venue: "TBA", time: "TBA", price: "TBA", desc: "Shot put and discus - power meets technique." },
-  { id: 9, name: "Badminton", img: imgBadminton, category: "Male / Female", venue: "TBA", time: "TBA", price: "TBA", desc: "Smash it! Fast-paced racquet action." },
-  { id: 10, name: "Table Tennis", img: imgTableTennis, category: "Male / Female", venue: "TBA", time: "TBA", price: "TBA", desc: "Quick reflexes and precise shots." },
-  { id: 11, name: "Carrom", img: imgCarrom, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "The game of calculation - aim and strike." },
-  { id: 12, name: "Chess", img: imgChess, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "One board, endless battles - outsmart your opponent." },
-  { id: 13, name: "Tug of War", img: imgRopeRoyale, category: "Open", venue: "TBA", time: "TBA", price: "TBA", desc: "One rope, one crown - pull your way to glory." },
-  { id: 14, name: "Jumps", img: imgLongJump, category: "Male / Female", venue: "TBA", time: "TBA", price: "TBA", desc: "Long jump and high jump - defy gravity." },
+  { id: 1, name: "Football", img: imgFootball, category: "Male", venue: "TBA", time: "TBA", players: "11", desc: "The beautiful game - showcase your skills on the field." },
+  { id: 2, name: "Basketball", img: imgBasketball, category: "Male / Female", venue: "TBA", time: "TBA", players: "5", desc: "Dribble, shoot, score - dominate the court." },
+  { id: 3, name: "Volleyball", img: imgVolleyball, category: "Male / Female", venue: "TBA", time: "TBA", players: "6", desc: "Spike your way to victory." },
+  { id: 4, name: "Kabaddi", img: imgKabaddi, category: "Male", venue: "TBA", time: "TBA", players: "11", desc: "Traditional Indian sport of strength and strategy." },
+  { id: 5, name: "Kho-Kho", img: imgKhoKho, category: "Male / Female", venue: "TBA", time: "TBA", players: "11", desc: "Speed and agility in this traditional tag game." },
+  { id: 6, name: "Sprint", img: imgSprint, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "When speed takes over - race to the finish." },
+  { id: 7, name: "Slow Cycle", img: imgSlowCycle, category: "Female", venue: "TBA", time: "TBA", players: "1", desc: "Patient, precise, powerful - balance is key." },
+  { id: 8, name: "Throw", img: imgThrow, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "Shot put and discus - power meets technique." },
+  { id: 9, name: "Badminton", img: imgBadminton, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "Smash it! Fast-paced racquet action." },
+  { id: 10, name: "Table Tennis", img: imgTableTennis, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "Quick reflexes and precise shots." },
+  { id: 11, name: "Carrom", img: imgCarrom, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "The game of calculation - aim and strike." },
+  { id: 12, name: "Chess", img: imgChess, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "One board, endless battles - outsmart your opponent." },
+  { id: 13, name: "Tug of War", img: imgRopeRoyale, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "One rope, one crown - pull your way to glory." },
+  { id: 14, name: "Jumps", img: imgLongJump, category: "Male / Female", venue: "TBA", time: "TBA", players: "1", desc: "Long jump and high jump - defy gravity." },
 ];
 
 // Modal Component
@@ -240,8 +240,8 @@ const EventModal = ({ event, onClose }) => {
               <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.time}</p>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Price</span>
-              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.price}</p>
+              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Players</span>
+              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.players}</p>
             </div>
           </div>
 
@@ -268,7 +268,6 @@ const EventModal = ({ event, onClose }) => {
             </a>
           </div>
         </div>
-
       </motion.div>
     </motion.div>
   );
