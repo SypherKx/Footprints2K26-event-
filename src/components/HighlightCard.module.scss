@@ -1,4 +1,3 @@
-
 .card {
     position: relative;
     border-top-right-radius: 3rem;
@@ -109,6 +108,7 @@
 
     @media screen and (min-width: 1000px) {
         height: 40vw;
+
         >main {
             .cardTitle {
                 font-size: 3vw;

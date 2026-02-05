@@ -10,7 +10,8 @@
         "image": "/media/events/football_new.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-2",
@@ -23,7 +24,8 @@
         "image": "/media/events/basketball_new.jpg",
         "prize": "TBA",
         "team": "5 Players",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-3",
@@ -36,7 +38,8 @@
         "image": "/media/events/volleyball_new2.jpg",
         "prize": "TBA",
         "team": "6 Players",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-4",
@@ -49,7 +52,8 @@
         "image": "/media/events/kabaddi_new.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-5",
@@ -62,7 +66,8 @@
         "image": "/media/events/kho-kho_new2.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-6",
@@ -75,7 +80,8 @@
         "image": "/media/events/sprint_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-7",
@@ -88,7 +94,8 @@
         "image": "/media/events/slow-cycle_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-8",
@@ -101,7 +108,8 @@
         "image": "/media/events/throw_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-9",
@@ -114,7 +122,8 @@
         "image": "/media/events/badminton_new3.jpg",
         "prize": "TBA",
         "team": "Solo / Doubles",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-10",
@@ -127,7 +136,8 @@
         "image": "/media/events/table-tennis_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-11",
@@ -140,7 +150,8 @@
         "image": "/media/events/carrom_new2.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-12",
@@ -153,7 +164,8 @@
         "image": "/media/events/chess_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-13",
@@ -166,7 +178,8 @@
         "image": "/media/events/rope-royale_new.jpg",
         "prize": "TBA",
         "team": "Team",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     },
     {
         "id": "fp-14",
@@ -179,6 +192,7 @@
         "image": "/media/events/jumps_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA"
+        "fee": "TBA",
+        "gender": "M/F"
     }
 ]
