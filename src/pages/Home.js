@@ -148,7 +148,16 @@ const Home = ({ user }) => {
               animate={introInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Link to='/games'>FOOTPRINTS</Link>
+              <Link
+                to='/games'
+                style={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  cursor: 'crosshair',
+                }}
+              >
+                FOOTPRINTS
+              </Link>
             </motion.span>
             <motion.span
               className={styles._ar}
