@@ -36,4 +36,3 @@ const HighlightCard = ({ figureSrc, title, desc, type, isRegistrationOpen, user 
 
 export default HighlightCard;
 
-

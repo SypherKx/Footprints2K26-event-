@@ -196,10 +196,14 @@ const EventFigure = ({ id, title, figureSrc, isActive = false }) => (
 const EventModal = ({ event, onClose }) => {
   const [selectedGender, setSelectedGender] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isSmallMobile, setIsSmallMobile] = useState(window.innerWidth <= 400);
 
   // Handle resize for responsive
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setIsSmallMobile(window.innerWidth <= 400);
+    };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -236,7 +240,7 @@ const EventModal = ({ event, onClose }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: isMobile ? '16px' : '40px',
+        padding: isSmallMobile ? '10px' : isMobile ? '16px' : '40px',
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -249,10 +253,10 @@ const EventModal = ({ event, onClose }) => {
         className="event-modal-card"
         style={{
           background: '#1a1a1a',
-          borderRadius: isMobile ? '20px' : '28px',
+          borderRadius: isSmallMobile ? '16px' : isMobile ? '20px' : '28px',
           width: '100%',
-          maxWidth: '520px',
-          maxHeight: isMobile ? '90vh' : '85vh',
+          maxWidth: isSmallMobile ? '95vw' : '520px',
+          maxHeight: isSmallMobile ? '95vh' : isMobile ? '90vh' : '85vh',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -298,7 +302,7 @@ const EventModal = ({ event, onClose }) => {
           <div
             style={{
               width: '100%',
-              height: isMobile ? '180px' : '220px',
+              height: isSmallMobile ? '120px' : isMobile ? '150px' : '220px',
               position: 'relative',
               overflow: 'hidden',
               background: 'linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)',
@@ -326,10 +330,10 @@ const EventModal = ({ event, onClose }) => {
         {/* Content Section */}
         <div
           style={{
-            padding: isMobile ? '20px' : '28px',
+            padding: isSmallMobile ? '14px' : isMobile ? '18px' : '28px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
+            gap: isSmallMobile ? '10px' : '16px',
             overflowY: 'auto',
             flex: 1,
           }}
@@ -339,15 +343,15 @@ const EventModal = ({ event, onClose }) => {
             <span
               style={{
                 display: 'inline-block',
-                padding: '6px 14px',
+                padding: isSmallMobile ? '4px 10px' : '6px 14px',
                 borderRadius: '20px',
                 background: 'linear-gradient(135deg, #974B60 0%, #b85a72 100%)',
                 color: '#fff',
-                fontSize: '10px',
+                fontSize: isSmallMobile ? '9px' : '10px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
                 letterSpacing: '1.2px',
-                marginBottom: '12px',
+                marginBottom: isSmallMobile ? '8px' : '12px',
               }}
             >
               {event.type}
@@ -355,7 +359,7 @@ const EventModal = ({ event, onClose }) => {
             <h2
               style={{
                 fontFamily: "'Antonio', sans-serif",
-                fontSize: isMobile ? '1.8rem' : '2.2rem',
+                fontSize: isSmallMobile ? '1.4rem' : isMobile ? '1.6rem' : '2.2rem',
                 lineHeight: 1.15,
                 textTransform: 'uppercase',
                 color: '#fff',
@@ -370,9 +374,9 @@ const EventModal = ({ event, onClose }) => {
           {/* Description */}
           {event.desc && (
             <p style={{
-              fontSize: '14px',
+              fontSize: isSmallMobile ? '12px' : '14px',
               color: 'rgba(255,255,255,0.65)',
-              lineHeight: 1.6,
+              lineHeight: 1.5,
               margin: 0,
             }}>
               {event.desc}
@@ -384,10 +388,10 @@ const EventModal = ({ event, onClose }) => {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '12px',
+              gap: isSmallMobile ? '8px' : '12px',
               background: 'rgba(255,255,255,0.04)',
-              padding: '16px',
-              borderRadius: '14px',
+              padding: isSmallMobile ? '12px' : '16px',
+              borderRadius: isSmallMobile ? '10px' : '14px',
               border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
@@ -518,12 +522,12 @@ const EventModal = ({ event, onClose }) => {
                 justifyContent: 'center',
                 gap: '8px',
                 width: '100%',
-                padding: '15px 20px',
+                padding: isSmallMobile ? '12px 16px' : '15px 20px',
                 background: 'linear-gradient(135deg, #974B60 0%, #b85a72 100%)',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: isSmallMobile ? '10px' : '12px',
                 color: '#fff',
-                fontSize: '13px',
+                fontSize: isSmallMobile ? '12px' : '13px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
                 textDecoration: 'none',

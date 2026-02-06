@@ -6,6 +6,18 @@ import Footer from '../layouts/Footer';
 
 // Modal Component
 const EventModal = ({ event, onClose }) => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+  const [isSmallMobile, setIsSmallMobile] = React.useState(window.innerWidth <= 400);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setIsSmallMobile(window.innerWidth <= 400);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   if (!event) return null;
 
   const overlayStyle = {
@@ -16,31 +28,31 @@ const EventModal = ({ event, onClose }) => {
     bottom: 0,
     width: '100vw',
     height: '100vh',
-    background: 'rgba(0, 0, 0, 0.75)',
+    background: 'rgba(0, 0, 0, 0.85)',
     backdropFilter: 'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
     zIndex: 9999,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '1rem',
+    padding: isSmallMobile ? '0.5rem' : '1rem',
   };
 
   const contentStyle = {
-    background: 'rgba(255, 255, 255, 0.05)',
+    background: 'rgba(30, 30, 30, 0.95)',
     backdropFilter: 'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
-    borderRadius: '20px',
-    border: '1px solid rgba(255, 255, 255, 0.3)',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 0px 0px rgba(255, 255, 255, 0);',
+    borderRadius: isSmallMobile ? '16px' : '20px',
+    border: '1px solid rgba(255, 255, 255, 0.15)',
+    boxShadow: '0 25px 80px rgba(0, 0, 0, 0.6)',
     position: 'relative',
     overflow: 'hidden',
-    width: '100%',
-    maxWidth: '850px',
-    maxHeight: '85vh',
+    width: isSmallMobile ? '98%' : '100%',
+    maxWidth: isMobile ? '100%' : '850px',
+    maxHeight: isSmallMobile ? '95vh' : '90vh',
     overflowY: 'auto',
     display: 'flex',
-    flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
+    flexDirection: isMobile ? 'column' : 'row',
     color: 'white',
   };
 
@@ -65,19 +77,20 @@ const EventModal = ({ event, onClose }) => {
   };
 
   const imageContainerStyle = {
-    flex: window.innerWidth <= 768 ? 'none' : 1,
-    minHeight: window.innerWidth <= 768 ? '220px' : '400px',
+    flex: isMobile ? 'none' : 1,
+    minHeight: isMobile ? 'auto' : '400px',
     position: 'relative',
     overflow: 'hidden',
-    borderRadius: window.innerWidth <= 768 ? '24px 24px 0 0' : '24px 0 0 24px',
+    borderRadius: isMobile ? '16px 16px 0 0' : '20px 0 0 20px',
+    background: '#1a1a1a',
   };
 
   const infoStyle = {
     flex: 1.1,
-    padding: window.innerWidth <= 768 ? '1.5rem' : '2.5rem',
+    padding: isSmallMobile ? '1rem' : isMobile ? '1.25rem' : '2.5rem',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: isSmallMobile ? '0.6rem' : '1rem',
   };
 
   const registerButtonStyle = {
@@ -139,18 +152,20 @@ const EventModal = ({ event, onClose }) => {
             alt={event.title}
             style={{
               width: '100%',
-              height: '100%',
-              objectFit: 'cover',
+              height: isMobile ? 'auto' : '100%',
+              objectFit: isMobile ? 'contain' : 'cover',
               transition: 'transform 0.5s ease',
+              maxHeight: isMobile ? '300px' : 'none',
             }}
           />
+          {/* Seamless gradient overlay */}
           <div style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
             right: 0,
-            height: '50%',
-            background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)',
+            height: '70%',
+            // background: 'linear-gradient(to top, #1C1C1C 0%, #1C1C1C 15%, rgba(28,28,28,0.6) 50%, transparent 100%)',
             pointerEvents: 'none',
           }} />
         </div>
@@ -172,47 +187,73 @@ const EventModal = ({ event, onClose }) => {
             }}>
               {event.subtitle || "Sports Event"}
             </span>
-            <h2 style={{
-              fontFamily: "'Antonio', sans-serif",
-              fontSize: window.innerWidth <= 768 ? '2rem' : '2.8rem',
-              lineHeight: 1.1,
-              textTransform: 'uppercase',
-              background: 'linear-gradient(90deg, #fff, #ccc)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: isSmallMobile ? '0.5rem' : '0.75rem',
+              flexWrap: 'wrap',
               marginTop: '0.5rem',
-              fontWeight: 700,
             }}>
-              {event.title}
-            </h2>
+              <h2 style={{
+                fontFamily: "'Antonio', sans-serif",
+                fontSize: isSmallMobile ? '1.5rem' : isMobile ? '1.8rem' : '2.8rem',
+                lineHeight: 1.1,
+                textTransform: 'uppercase',
+                background: 'linear-gradient(90deg, #fff, #ccc)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                margin: 0,
+                fontWeight: 700,
+              }}>
+                {event.title}
+              </h2>
+              {/* Gender Display */}
+              {event.gender && (
+                <span style={{
+                  alignSelf: 'center',
+                  display: 'inline-block',
+                  padding: '0.3rem 0.8rem',
+                  borderRadius: '20px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  color: '#fff',
+                  fontSize: isSmallMobile ? '0.7rem' : '0.8rem',
+                  fontWeight: '600',
+                  letterSpacing: '1px',
+                }}>
+                  {event.gender === 'M' ? '♂ Boys' : event.gender === 'F' ? '♀ Girls' : event.gender === 'M/F' ? '♂ Male / ♀ Female' : event.gender}
+                </span>
+              )}
+            </div>
           </div>
 
-          <p style={{ fontSize: '1rem', color: '#999', lineHeight: 1.7 }}>
+          <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', color: '#999', lineHeight: 1.6 }}>
             {event.description}
           </p>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gap: '1.25rem',
-            // background: 'rgba(255,255,255,0.05)',
+            gap: isSmallMobile ? '0.6rem' : '1rem',
             marginTop: '0.5rem',
           }}>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Team / Players</span>
-              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.team}</p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
+              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Team / Players</span>
+              <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.team}</p>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Location</span>
-              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.location}</p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
+              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Location</span>
+              <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.location}</p>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Time</span>
-              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.time}</p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
+              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Time</span>
+              <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.time}</p>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '12px' }}>
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#666', letterSpacing: '1.5px', fontWeight: 600 }}>Entry Fee</span>
-              <p style={{ fontSize: '1rem', fontWeight: '600', color: '#fff', marginTop: '0.3rem' }}>{event.fee}</p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
+              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Entry Fee</span>
+              <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.fee}</p>
             </div>
           </div>
 
