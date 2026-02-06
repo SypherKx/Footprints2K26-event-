@@ -78,11 +78,11 @@
         "subtitle": "Need for Speed",
         "description": "When speed takes over - race to the finish.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "infront of AA Block",
         "image": "/media/events/sprint_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
     {
@@ -92,12 +92,12 @@
         "subtitle": "Balance Master",
         "description": "Patient, precise, powerful - balance is key.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "infront of J Block",
         "image": "/media/events/slow-cycle_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
-        "gender": "M/F"
+        "fee": "₹ 49/- Per Person",
+        "gender": "F"
     },
     {
         "id": "fp-8",
@@ -106,11 +106,11 @@
         "subtitle": "Power Put",
         "description": "Shot put and discus - power meets technique.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "infront of R Block",
         "image": "/media/events/throw_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
     {
@@ -120,11 +120,12 @@
         "subtitle": "Smash Hit",
         "description": "Smash it! Fast-paced racquet action.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Boys:Boys-Hostel A",
+        "location2": "Girls:Girls-Hostel",
         "image": "/media/events/badminton_new3.jpg",
         "prize": "TBA",
-        "team": "Solo / Doubles",
-        "fee": "TBA",
+        "team": "Doubles",
+        "fee": "₹ 99/- Per Team",
         "gender": "M/F"
     },
     {
@@ -134,11 +135,12 @@
         "subtitle": "Ping Pong Power",
         "description": "Quick reflexes and precise shots.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Boys: Boys-Hostel A",
+        "location2": "Girls: Girls-Hostel",
         "image": "/media/events/table-tennis_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
     {
@@ -148,11 +150,11 @@
         "subtitle": "Striker's Aim",
         "description": "The game of calculation - aim and strike.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Urban Vadapao Outlet",
         "image": "/media/events/carrom_new2.jpg",
         "prize": "TBA",
-        "team": "Solo",
-        "fee": "TBA",
+        "team": "Solo/Doubles",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
     {
@@ -162,11 +164,11 @@
         "subtitle": "Checkmate Championship",
         "description": "One board, endless battles - outsmart your opponent.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Brio Cafe",
         "image": "/media/events/chess_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
     {
@@ -176,11 +178,11 @@
         "subtitle": "Pull for Glory",
         "description": "One rope, one crown - pull your way to glory.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "R-Block Ground",
         "image": "/media/events/rope-royale_new.jpg",
         "prize": "TBA",
-        "team": "Team",
-        "fee": "TBA",
+        "team": "8 Players",
+        "fee": "₹ 349/- Per Team",
         "gender": "M/F"
     },
     {
@@ -190,11 +192,11 @@
         "subtitle": "Leap of Faith",
         "description": "Long jump and high jump - defy gravity.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "R-Block Ground",
         "image": "/media/events/jumps_new.jpg",
         "prize": "TBA",
         "team": "Solo",
-        "fee": "TBA",
+        "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     }
 ]
