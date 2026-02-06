@@ -396,7 +396,7 @@ const EventModal = ({ event, onClose }) => {
             }}
           >
             {[
-              { label: 'Category', value: event.category || 'Male / Female' },
+              { label: 'Category', value: event.category || 'Girls / Boys' },
               { label: 'Venue', value: event.venue || 'TBA' },
               { label: 'Time', value: event.time || 'TBA' },
               { label: 'Price', value: event.price || 'TBA' },
@@ -475,7 +475,7 @@ const EventModal = ({ event, onClose }) => {
                     zIndex: 1,
                   }}
                 >
-                  ♂ Male
+                  ♂ Boys
                 </button>
                 {/* Female Button */}
                 <button
@@ -499,7 +499,7 @@ const EventModal = ({ event, onClose }) => {
                     zIndex: 1,
                   }}
                 >
-                  ♀ Female
+                  ♀ Girls
                 </button>
               </div>
             </div>

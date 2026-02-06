@@ -81,6 +81,8 @@ const EventModal = ({ event, onClose }) => {
     minHeight: isMobile ? 'auto' : '400px',
     position: 'relative',
     overflow: 'hidden',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
     borderRadius: isMobile ? '16px 16px 0 0' : '20px 0 0 20px',
     background: '#1a1a1a',
   };
@@ -147,15 +149,31 @@ const EventModal = ({ event, onClose }) => {
         </button>
 
         <div style={imageContainerStyle}>
+          {/* Blurred Background Layer */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(${event.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(20px) brightness(0.6)',
+            transform: 'scale(1.1)', // Prevent blur edges
+            zIndex: 0,
+          }} />
+
+          {/* Main Image */}
           <img
             src={event.image}
             alt={event.title}
             style={{
+              position: 'relative',
               width: '100%',
               height: isMobile ? 'auto' : '100%',
-              objectFit: isMobile ? 'contain' : 'cover',
+              objectFit: 'contain',
               transition: 'transform 0.5s ease',
               maxHeight: isMobile ? '300px' : 'none',
+              zIndex: 1,
+              filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))', // Add depth
             }}
           />
           {/* Seamless gradient overlay */}
@@ -213,17 +231,29 @@ const EventModal = ({ event, onClose }) => {
               {event.gender && (
                 <span style={{
                   alignSelf: 'center',
-                  display: 'inline-block',
-                  padding: '0.3rem 0.8rem',
-                  borderRadius: '20px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '0.4rem 1rem',
+                  borderRadius: '30px',
                   background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  webkitBackdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
+                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
                   color: '#fff',
-                  fontSize: isSmallMobile ? '0.7rem' : '0.8rem',
+                  fontSize: isSmallMobile ? '0.75rem' : '0.85rem',
                   fontWeight: '600',
-                  letterSpacing: '1px',
+                  letterSpacing: '0.5px',
+                  textTransform: 'uppercase',
                 }}>
-                  {event.gender === 'M' ? '♂ Boys' : event.gender === 'F' ? '♀ Girls' : event.gender === 'M/F' ? '♂ Male / ♀ Female' : event.gender}
+                  {event.gender === 'M' ? '♂ Boys' : event.gender === 'F' ? '♀ Girls' : event.gender === 'M/F' ?
+                    <>
+                      <span style={{ color: '#89CFF0' }}>♂ Boys</span>
+                      <span style={{ opacity: 0.5 }}>|</span>
+                      <span style={{ color: '#F4C2C2' }}>♀ Girls</span>
+                    </>
+                    : event.gender}
                 </span>
               )}
             </div>
@@ -243,9 +273,58 @@ const EventModal = ({ event, onClose }) => {
               <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Team / Players</span>
               <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.team}</p>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
-              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Location</span>
-              <p style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff', marginTop: '0.25rem' }}>{event.location}</p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Venue</span>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                {/* Location 1 */}
+                <div style={{ display: 'flex', alignItems: 'start', gap: '0.5rem' }}>
+                  {event.location.includes(':') ? (
+                    <>
+                      <span style={{
+                        color: event.location.toLowerCase().includes('boy') ? '#89CFF0' : '#F4C2C2',
+                        fontWeight: '700',
+                        fontSize: isSmallMobile ? '0.75rem' : '0.9rem',
+                        minWidth: '3.5rem'
+                      }}>
+                        {event.location.split(':')[0]}:
+                      </span>
+                      <span style={{ fontSize: isSmallMobile ? '0.8rem' : '0.95rem', color: '#fff', opacity: 0.9 }}>
+                        {event.location.split(':')[1]}
+                      </span>
+                    </>
+                  ) : (
+                    <span style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff' }}>
+                      {event.location}
+                    </span>
+                  )}
+                </div>
+
+                {/* Location 2 */}
+                {event.location2 && (
+                  <div style={{ display: 'flex', alignItems: 'start', gap: '0.5rem', paddingTop: '0.4rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    {event.location2.includes(':') ? (
+                      <>
+                        <span style={{
+                          color: event.location2.toLowerCase().includes('girl') ? '#F4C2C2' : '#89CFF0',
+                          fontWeight: '700',
+                          fontSize: isSmallMobile ? '0.75rem' : '0.9rem',
+                          minWidth: '3.5rem'
+                        }}>
+                          {event.location2.split(':')[0]}:
+                        </span>
+                        <span style={{ fontSize: isSmallMobile ? '0.8rem' : '0.95rem', color: '#fff', opacity: 0.9 }}>
+                          {event.location2.split(':')[1]}
+                        </span>
+                      </>
+                    ) : (
+                      <span style={{ fontSize: isSmallMobile ? '0.85rem' : '1rem', fontWeight: '600', color: '#fff' }}>
+                        {event.location2}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: isSmallMobile ? '0.7rem' : '1rem', borderRadius: isSmallMobile ? '10px' : '12px' }}>
               <span style={{ fontSize: isSmallMobile ? '0.6rem' : '0.7rem', textTransform: 'uppercase', color: '#888', letterSpacing: '1.2px', fontWeight: 600 }}>Time</span>

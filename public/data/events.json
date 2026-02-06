@@ -3,15 +3,15 @@
         "id": "fp-1",
         "title": "Football",
         "club": "Footprints",
-        "subtitle": "The Beautiful Game",
-        "description": "The beautiful game - showcase your skills on the field.",
+        "subtitle": "Kickoff Glory",
+        "description": "Dominate the pitch with precision, power, and passion.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "AA-Block Ground",
         "image": "/media/events/football_new.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA",
-        "gender": "M/F"
+        "fee": "₹ 499/- Per Team",
+        "gender": "M"
     },
     {
         "id": "fp-2",
@@ -20,11 +20,12 @@
         "subtitle": "Hoops Glory",
         "description": "Dribble,  shoot, score - dominate the court.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Boys:Boys Basketball Court",
+        "location2": "Girls:Girls Basketball Court",
         "image": "/media/events/basketball_new.jpg",
         "prize": "TBA",
         "team": "5 Players",
-        "fee": "TBA",
+        "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
     {
@@ -34,11 +35,12 @@
         "subtitle": "Spike It",
         "description": "Spike your way to victory.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "Boys: in front of hostel C",
+        "location2": "Girls: in front of R Block",
         "image": "/media/events/volleyball_new2.jpg",
         "prize": "TBA",
         "team": "6 Players",
-        "fee": "TBA",
+        "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
     {
@@ -48,12 +50,12 @@
         "subtitle": "Raid and Defend",
         "description": "Traditional Indian sport of strength and strategy.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "R-Block Ground",
         "image": "/media/events/kabaddi_new.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA",
-        "gender": "M/F"
+        "fee": "₹ 499/- Per Team",
+        "gender": "M"
     },
     {
         "id": "fp-5",
@@ -62,11 +64,11 @@
         "subtitle": "Chase and Tag",
         "description": "Speed and agility in this traditional tag game.",
         "time": "TBA",
-        "location": "TBA",
+        "location": "R-Block Ground",
         "image": "/media/events/kho-kho_new2.jpg",
         "prize": "TBA",
         "team": "11 Players",
-        "fee": "TBA",
+        "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
     {
