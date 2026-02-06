@@ -278,14 +278,14 @@ const EventModal = ({ event, onClose }) => {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {/* Location 1 */}
-                <div style={{ display: 'flex', alignItems: 'start', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'start', gap: '0.1rem' }}>
                   {event.location.includes(':') ? (
                     <>
                       <span style={{
                         color: event.location.toLowerCase().includes('boy') ? '#89CFF0' : '#F4C2C2',
                         fontWeight: '700',
                         fontSize: isSmallMobile ? '0.75rem' : '0.9rem',
-                        minWidth: '3.5rem'
+                        minWidth: '2.5rem'
                       }}>
                         {event.location.split(':')[0]}:
                       </span>
@@ -302,14 +302,14 @@ const EventModal = ({ event, onClose }) => {
 
                 {/* Location 2 */}
                 {event.location2 && (
-                  <div style={{ display: 'flex', alignItems: 'start', gap: '0.5rem', paddingTop: '0.4rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ display: 'flex', alignItems: 'start', gap: '0.1rem', paddingTop: '0.4rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                     {event.location2.includes(':') ? (
                       <>
                         <span style={{
                           color: event.location2.toLowerCase().includes('girl') ? '#F4C2C2' : '#89CFF0',
                           fontWeight: '700',
                           fontSize: isSmallMobile ? '0.75rem' : '0.9rem',
-                          minWidth: '3.5rem'
+                          minWidth: '2.5rem'
                         }}>
                           {event.location2.split(':')[0]}:
                         </span>
