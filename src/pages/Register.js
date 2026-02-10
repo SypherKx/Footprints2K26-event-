@@ -79,6 +79,7 @@ const EventModal = ({ event, onClose }) => {
   const imageContainerStyle = {
     flex: isMobile ? 'none' : 1,
     minHeight: isMobile ? 'auto' : '400px',
+    // padding:"10px",
     position: 'relative',
     overflow: 'hidden',
     backgroundPosition: 'center',
@@ -474,8 +475,25 @@ const Register = () => {
               style={{ cursor: 'pointer' }}
             >
               <div className={styles.imageWrapper}>
-                <img draggable="false" src={event.image} alt={event.title} className={styles.eventImage} loading="lazy" />
-                <div className={styles.eventOverlay}>
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  backgroundImage: `url(${event.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(15px) brightness(0.5)',
+                  zIndex: 0,
+                  transform: 'scale(1.2)'
+                }} />
+                <img
+                  draggable="false"
+                  src={event.image}
+                  alt={event.title}
+                  className={styles.eventImage}
+                  loading="lazy"
+                  style={{ position: 'relative', zIndex: 1 }}
+                />
+                <div className={styles.eventOverlay} style={{ zIndex: 2 }}>
                   <h3 className={styles.eventName}>{event.title}</h3>
                 </div>
               </div>
