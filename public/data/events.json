@@ -9,7 +9,7 @@
         "location": "AA-Block Ground",
         "image": "/media/events/football_new.jpg",
         "prize": "TBA",
-        "team": "11 Players",
+        "team": "11+4 Players",
         "fee": "₹ 499/- Per Team",
         "gender": "M"
     },
@@ -24,7 +24,7 @@
         "location2": "Girls:Girls Basketball Court",
         "image": "/media/events/basketball_new.jpg",
         "prize": "TBA",
-        "team": "5 Players",
+        "team": "6+3 Players",
         "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
@@ -39,7 +39,7 @@
         "location2": "Girls: in front of R Block",
         "image": "/media/events/vollyball.jpeg",
         "prize": "TBA",
-        "team": "6 Players",
+        "team": "6+4 Players",
         "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
@@ -53,7 +53,7 @@
         "location": "R-Block Ground",
         "image": "/media/events/kabbadi.jpeg",
         "prize": "TBA",
-        "team": "11 Players",
+        "team": "7+3 Players",
         "fee": "₹ 499/- Per Team",
         "gender": "M"
     },
@@ -67,7 +67,7 @@
         "location": "R-Block Ground",
         "image": "/media/events/khokho.jpeg",
         "prize": "TBA",
-        "team": "11 Players",
+        "team": "9+3 Players",
         "fee": "₹ 499/- Per Team",
         "gender": "M/F"
     },
@@ -137,9 +137,9 @@
         "time": "TBA",
         "location": "Boys: Boys-Hostel A",
         "location2": "Girls: Girls-Hostel",
-        "image": "/media/events/table-tennis_new.jpg",
+        "image": "/media/events/table.jpg.jpeg",
         "prize": "TBA",
-        "team": "Solo",
+        "team": "Singles",
         "fee": "₹ 49/- Per Person",
         "gender": "M/F"
     },
@@ -151,7 +151,7 @@
         "description": "Aim, flick, pocket. The classic striker showdown.",
         "time": "TBA",
         "location": "Urban Vadapao Outlet",
-        "image": "/media/events/carrom_new2.jpg",
+        "image": "/media/events/carrom.jpeg",
         "prize": "TBA",
         "team": "Doubles",
         "fee": "₹ 49/- Per Person",
@@ -165,7 +165,7 @@
         "description": "Quiet moves, loud victories. Outsmart your opponent.",
         "time": "TBA",
         "location": "Brio Cafe",
-        "image": "/media/events/chess_new.jpg",
+        "image": "/media/events/chess.jpg.jpeg",
         "prize": "TBA",
         "team": "Solo",
         "fee": "₹ 49/- Per Person",
@@ -181,7 +181,7 @@
         "location": "R-Block Ground",
         "image": "/media/events/rope.jpeg",
         "prize": "TBA",
-        "team": "8 Players",
+        "team": "6+2 Players",
         "fee": "₹ 349/- Per Team",
         "gender": "M/F"
     },
