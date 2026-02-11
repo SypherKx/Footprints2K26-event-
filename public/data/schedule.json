@@ -20,7 +20,7 @@
                     "id": "day0_event2",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & B / Girls:Girls-Hostel",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -28,7 +28,7 @@
                     "id": "day0_event3",
                     "title": "Table Tennis",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A",
+                    "venue": "Boys:Boys-Hostel A / Girls:Girls-Hostel",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -60,15 +60,15 @@
                     "id": "day1_event1",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & B / Girls:Girls-Hostel",
                     "type": "Sport",
-                    "category": "Open"  
+                    "category": "Open"
                 },
                 {
                     "id": "day1_event2",
                     "title": "Table Tennis",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A",
+                    "venue": "Boys:Boys-Hostel A / Girls:Girls-Hostel",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -92,7 +92,7 @@
                     "id": "day1_event5",
                     "title": "Basketball",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys Basketball Court",
+                    "venue": "Boys:Boys Basketball Court / Girls:Girls Basketball Court",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -124,7 +124,7 @@
                     "id": "day2_event1",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & B / Girls:Girls-Hostel",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -132,7 +132,7 @@
                     "id": "day2_event2",
                     "title": "Table Tennis",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A",
+                    "venue": "Boys:Boys-Hostel A / Girls:Girls-Hostel",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -156,7 +156,7 @@
                     "id": "day2_event5",
                     "title": "Basketball",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys Basketball Court",
+                    "venue": "Boys:Boys Basketball Court / Girls:Girls Basketball Court",
                     "type": "Sport",
                     "category": "Open"
                 },
