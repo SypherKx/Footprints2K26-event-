@@ -11,7 +11,7 @@
                 {
                     "id": "day0_event1",
                     "title": "Tug of War",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
@@ -19,15 +19,15 @@
                 {
                     "id": "day0_event2",
                     "title": "Badminton",
-                    "time": "TBA",
-                    "venue": "Boys:Boys-Hostel A",
+                    "time": "3:05 PM",
+                    "venue": "Boys:Boys-Hostel A & B",
                     "type": "Sport",
                     "category": "Open"
                 },
                 {
                     "id": "day0_event3",
                     "title": "Table Tennis",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A",
                     "type": "Sport",
                     "category": "Open"
@@ -35,7 +35,7 @@
                 {
                     "id": "day0_event4",
                     "title": "Carrom",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Urban Vadapao Outlet",
                     "type": "Sport",
                     "category": "Open"
@@ -43,7 +43,7 @@
                 {
                     "id": "day0_event5",
                     "title": "Chess",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Brio Cafe",
                     "type": "Sport",
                     "category": "Open"
@@ -59,15 +59,15 @@
                 {
                     "id": "day1_event1",
                     "title": "Badminton",
-                    "time": "TBA",
-                    "venue": "Boys:Boys-Hostel A",
+                    "time": "3:05 PM",
+                    "venue": "Boys:Boys-Hostel A & B",
                     "type": "Sport",
-                    "category": "Open"
+                    "category": "Open"  
                 },
                 {
                     "id": "day1_event2",
                     "title": "Table Tennis",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A",
                     "type": "Sport",
                     "category": "Open"
@@ -75,7 +75,7 @@
                 {
                     "id": "day1_event3",
                     "title": "Carrom",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Urban Vadapao Outlet",
                     "type": "Sport",
                     "category": "Open"
@@ -83,7 +83,7 @@
                 {
                     "id": "day1_event4",
                     "title": "Chess",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Brio Cafe",
                     "type": "Sport",
                     "category": "Open"
@@ -91,7 +91,7 @@
                 {
                     "id": "day1_event5",
                     "title": "Basketball",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Boys:Boys Basketball Court",
                     "type": "Sport",
                     "category": "Open"
@@ -99,7 +99,7 @@
                 {
                     "id": "day1_event6",
                     "title": "Football",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "AA-Block Ground",
                     "type": "Sport",
                     "category": "Open"
@@ -107,7 +107,7 @@
                 {
                     "id": "day1_event7",
                     "title": "Kho-Kho",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
@@ -123,15 +123,15 @@
                 {
                     "id": "day2_event1",
                     "title": "Badminton",
-                    "time": "TBA",
-                    "venue": "Boys:Boys-Hostel A",
+                    "time": "3:05 PM",
+                    "venue": "Boys:Boys-Hostel A & B",
                     "type": "Sport",
                     "category": "Open"
                 },
                 {
                     "id": "day2_event2",
                     "title": "Table Tennis",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A",
                     "type": "Sport",
                     "category": "Open"
@@ -139,7 +139,7 @@
                 {
                     "id": "day2_event3",
                     "title": "Chess",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Brio Cafe",
                     "type": "Sport",
                     "category": "Open"
@@ -147,7 +147,7 @@
                 {
                     "id": "day2_event4",
                     "title": "Carrom",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Urban Vadapao Outlet",
                     "type": "Sport",
                     "category": "Open"
@@ -155,7 +155,7 @@
                 {
                     "id": "day2_event5",
                     "title": "Basketball",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "Boys:Boys Basketball Court",
                     "type": "Sport",
                     "category": "Open"
@@ -163,7 +163,7 @@
                 {
                     "id": "day2_event6",
                     "title": "Football",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "AA-Block Ground",
                     "type": "Sport",
                     "category": "Open"
@@ -171,7 +171,7 @@
                 {
                     "id": "day2_event7",
                     "title": "Kho-Kho",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
@@ -179,7 +179,7 @@
                 {
                     "id": "day2_event8",
                     "title": "Kabaddi",
-                    "time": "TBA",
+                    "time": "3:05 PM",
                     "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
