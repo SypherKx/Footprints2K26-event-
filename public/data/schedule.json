@@ -61,6 +61,7 @@
                     "title": "Badminton",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A & B / Girls:Girls-Hostel",
+                    "venue": "Boys-Hostel A & C",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -69,6 +70,7 @@
                     "title": "Table Tennis",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A / Girls:Girls-Hostel",
+                    "venue": "Boys-Hostel A",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -93,6 +95,7 @@
                     "title": "Basketball",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys Basketball Court / Girls:Girls Basketball Court",
+                    "venue": "Boys Basketball Court",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -125,6 +128,7 @@
                     "title": "Badminton",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A & B / Girls:Girls-Hostel",
+                    "venue": "Boys-Hostel A & C",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -133,6 +137,7 @@
                     "title": "Table Tennis",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys-Hostel A / Girls:Girls-Hostel",
+                    "venue": "Boys-Hostel A",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -157,6 +162,7 @@
                     "title": "Basketball",
                     "time": "3:05 PM",
                     "venue": "Boys:Boys Basketball Court / Girls:Girls Basketball Court",
+                    "venue": "Boys Basketball Court",
                     "type": "Sport",
                     "category": "Open"
                 },

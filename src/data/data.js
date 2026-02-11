@@ -21,7 +21,6 @@ export const coordinators = [
   { name: 'Kanishka Mishra', roll: '', phone: '', email: '' },
   { name: 'Sanskriti Gupta', roll: '', phone: '', email: '' },
   { name: 'Aamir Khan', roll: '', phone: '', email: '' },
-  { name: 'Rashika Jadon', roll: '', phone: '', email: '' },
   { name: 'Rishveen Kaur', roll: '', phone: '', email: '' },
   { name: 'Manas Mishra', roll: '', phone: '', email: '' },
   { name: 'Anubhav Pathak', roll: '', phone: '', email: '' },
