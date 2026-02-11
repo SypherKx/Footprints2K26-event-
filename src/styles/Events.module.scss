@@ -137,7 +137,7 @@
                     flex: 1;
                     flex-direction: row;
                     justify-content: flex-end;
-                    align-items: flex-end;
+                    align-items: center;
                     flex-wrap: nowrap;
                     width: var(--list-width);
                     min-width: 100%;
@@ -276,7 +276,38 @@
         }
     }
 
-    @media (min-aspect-ratio: 1 / 1) and (min-width: 1000px) {
+    // Default layout (Mobile & up) - Horizontal
+    --list-width: 100%;
+    --li-title-width: 45%;
+    --li-venue-width: 35%;
+    --li-time-width: 20%;
+
+    .event-list-wrapper {
+        .event-list .event-li-inner {
+            justify-content: flex-start;
+            padding-left: 0.5rem;
+            margin-left: 0;
+            align-items: center;
+            font-size: 1rem; // Reduce font size slightly for mobile
+
+            .time {
+                text-align: left;
+                margin-right: 0;
+                padding-right: 0.5rem;
+            }
+
+            .venue {
+                text-align: left;
+                font-size: 0.9rem;
+            }
+
+            .title h4 {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
         --list-width: calc(100vw - (100vw - 9.375rem) * 4/14 + 1.875rem);
         --li-title-width: calc((100vw - 9.375rem) * 4/14 + 3.125rem);
         --li-venue-width: calc((100vw - 9.375rem) * 3/14 + 1.875rem);
@@ -295,43 +326,7 @@
         }
     }
 
-    @media (max-aspect-ratio: 1 / 1),
-    (max-width: 999px) {
-        .event-list-wrapper .event-list .event-li .event-li-inner {
-            font-size: 1.2rem;
-            flex-wrap: wrap;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-            height: auto; // Allow growing
 
-            .venue {
-                text-align: left;
-                font-weight: 400;
-                font-size: 1rem;
-                width: 100%; // Full width
-                order: 3;
-                color: #555;
-                padding-left: 0.2rem;
-            }
-
-            .title {
-                text-align: left;
-                width: 100%; // Full width
-                order: 1;
-                margin-bottom: 0.3rem;
-                padding-left: 0.2rem;
-            }
-
-            .time {
-                width: 100%; // Full width
-                order: 2;
-                margin-right: 0;
-                text-align: left;
-                margin-bottom: 0.3rem;
-                padding-left: 0.2rem;
-            }
-        }
-    }
 }
 
 // Modal Styles - Light Aesthetic Theme
