@@ -4,15 +4,47 @@
     "days": [
         {
             "id": 0,
-            "label": "Mon.",
-            "fullName": "Monday",
-            "date": "Feb 16",
+            "label": "Tue",
+            "fullName": "Tuesday",
+            "date": "Feb 17",
             "events": [
                 {
                     "id": "day0_event1",
-                    "title": "To Be Announced",
+                    "title": "Tug of War",
                     "time": "TBA",
-                    "venue": "TBA",
+                    "venue": "R-Block Ground",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day0_event2",
+                    "title": "Badminton",
+                    "time": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day0_event3",
+                    "title": "Table Tennis",
+                    "time": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day0_event4",
+                    "title": "Carrom",
+                    "time": "TBA",
+                    "venue": "Urban Vadapao Outlet",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day0_event5",
+                    "title": "Chess",
+                    "time": "TBA",
+                    "venue": "Brio Cafe",
                     "type": "Sport",
                     "category": "Open"
                 }
@@ -20,15 +52,63 @@
         },
         {
             "id": 1,
-            "label": "Tue.",
-            "fullName": "Tuesday",
-            "date": "Feb 17",
+            "label": "Wed",
+            "fullName": "Wednesday",
+            "date": "Feb 18",
             "events": [
                 {
                     "id": "day1_event1",
-                    "title": "To Be Announced",
+                    "title": "Badminton",
                     "time": "TBA",
-                    "venue": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event2",
+                    "title": "Table Tennis",
+                    "time": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event3",
+                    "title": "Carrom",
+                    "time": "TBA",
+                    "venue": "Urban Vadapao Outlet",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event4",
+                    "title": "Chess",
+                    "time": "TBA",
+                    "venue": "Brio Cafe",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event5",
+                    "title": "Basketball",
+                    "time": "TBA",
+                    "venue": "Boys:Boys Basketball Court",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event6",
+                    "title": "Football",
+                    "time": "TBA",
+                    "venue": "AA-Block Ground",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day1_event7",
+                    "title": "Kho-Kho",
+                    "time": "TBA",
+                    "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
                 }
@@ -36,31 +116,71 @@
         },
         {
             "id": 2,
-            "label": "Wed.",
-            "fullName": "Wednesday",
-            "date": "Feb 18",
-            "events": [
-                {
-                    "id": "day2_event1",
-                    "title": "this is to be",
-                    "time": "TBA",
-                    "venue": "TBA",
-                    "type": "Sport",
-                    "category": "Open"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "label": "Thu.",
+            "label": "Thu",
             "fullName": "Thursday",
             "date": "Feb 19",
             "events": [
                 {
-                    "id": "day3_event1",
-                    "title": "To Be Announced",
+                    "id": "day2_event1",
+                    "title": "Badminton",
                     "time": "TBA",
-                    "venue": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event2",
+                    "title": "Table Tennis",
+                    "time": "TBA",
+                    "venue": "Boys:Boys-Hostel A",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event3",
+                    "title": "Chess",
+                    "time": "TBA",
+                    "venue": "Brio Cafe",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event4",
+                    "title": "Carrom",
+                    "time": "TBA",
+                    "venue": "Urban Vadapao Outlet",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event5",
+                    "title": "Basketball",
+                    "time": "TBA",
+                    "venue": "Boys:Boys Basketball Court",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event6",
+                    "title": "Football",
+                    "time": "TBA",
+                    "venue": "AA-Block Ground",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event7",
+                    "title": "Kho-Kho",
+                    "time": "TBA",
+                    "venue": "R-Block Ground",
+                    "type": "Sport",
+                    "category": "Open"
+                },
+                {
+                    "id": "day2_event8",
+                    "title": "Kabaddi",
+                    "time": "TBA",
+                    "venue": "R-Block Ground",
                     "type": "Sport",
                     "category": "Open"
                 }
