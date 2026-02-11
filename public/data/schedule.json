@@ -20,7 +20,7 @@
                     "id": "day0_event2",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & C",
                     "type": "Sport",
                     "category": "Open"
                 },
@@ -60,7 +60,7 @@
                     "id": "day1_event1",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & C",
                     "type": "Sport",
                     "category": "Open"  
                 },
@@ -124,7 +124,7 @@
                     "id": "day2_event1",
                     "title": "Badminton",
                     "time": "3:05 PM",
-                    "venue": "Boys:Boys-Hostel A & B",
+                    "venue": "Boys:Boys-Hostel A & C",
                     "type": "Sport",
                     "category": "Open"
                 },
