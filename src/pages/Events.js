@@ -81,6 +81,13 @@ const Events = ({ user }) => {
 
   const selectedEvent = selectedEventId ? events[selectedEventId] : null;
 
+  // Find the day object that matches the currentDay ID
+  const activeDaySchedule = scheduleConfig.days.find(d => d.id === currentDay) || { events: [] };
+
+  console.log('Current Day ID:', currentDay);
+  console.log('Active Day Schedule:', activeDaySchedule);
+
+
   return (
     <>
 
@@ -127,13 +134,13 @@ const Events = ({ user }) => {
               </div>
             </div>
             <ul className={styles['event-list']}>
-              {(scheduleConfig.days[currentDay]?.events || []).map(event => (
+              {(activeDaySchedule.events || []).map(event => (
                 <EventLI key={event.id} {...event} handleHover={setActiveEventId} />
               ))}
             </ul>
             <div className={styles['event-figures']}>
               <div className={styles.figures}>
-                {(scheduleConfig.days[currentDay]?.events || []).map(event => (
+                {(activeDaySchedule.events || []).map(event => (
                   <EventFigure key={event.id} {...event} isActive={activeEventId === event.id} />
                 ))}
               </div>
