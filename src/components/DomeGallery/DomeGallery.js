@@ -45,7 +45,7 @@ const wrapAngleSigned = deg => {
 };
 const getDataNumber = (el, name, fallback) => {
     const attr = el.dataset[name] ?? el.getAttribute(`data-${name}`);
-    const n = attr == null ? NaN : parseFloat(attr);
+    const n = attr === null ? NaN : parseFloat(attr);
     return Number.isFinite(n) ? n : fallback;
 };
 
