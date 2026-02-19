@@ -29,7 +29,7 @@ export default function SecurityWrapper({ children }) {
         };
         const showWarning = () => {
             console.clear();
-            console.log(
+            // console.log(
                 "%c⚠️WARNING⚠️!",
                 "color: red; font-size: 50px; font-weight: bold;",
             )
