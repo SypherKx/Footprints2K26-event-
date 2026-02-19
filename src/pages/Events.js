@@ -84,7 +84,7 @@ const Events = ({ user }) => {
   // Find the day object that matches the currentDay ID
   const activeDaySchedule = scheduleConfig.days.find(d => d.id === currentDay) || { events: [] };
 
-  console.log('Current Day ID:', currentDay);
+  // console.log('Current Day ID:', currentDay);
   console.log('Active Day Schedule:', activeDaySchedule);
 
 
