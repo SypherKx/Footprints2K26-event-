@@ -1,0 +1,179 @@
+.sponsors {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative; // Ensure absolute position children are relative to this container
+
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto !important;
+        padding: 0 !important;
+        margin-bottom: 1rem;
+        z-index: 2; // Keep content above background
+    }
+
+    // Removed min-height: 100vh and flex centering to allow header to take full screen naturally as per Gallery
+
+
+
+    // Keep heading centering or allow it to align left if desired. The Gallery reference has it bottom-left.
+    // If the user wants EXACT placement like Gallery, we should remove the center override.
+    :global(.heading) {
+        text-align: center;
+        // Removed text-align: center and margin overrides
+        color: var(--primary);
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .header-subtitle {
+        color: var(--primary);
+        font-family: 'Antonio', sans-serif;
+        letter-spacing: -0.15ch;
+        line-height: 1;
+        text-transform: uppercase;
+
+        >h2 {
+            font-size: 8.5vw;
+        }
+
+        >div {
+            font-size: 2rem;
+        }
+
+        @media screen and (max-width: 999px) {
+            >h2 {
+                font-size: 12vw;
+            }
+        }
+
+        @media screen and (max-width: 699px) {
+            >h2 {
+                font-size: 16vw;
+            }
+        }
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .divider {
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #ffd700, #00d4ff, #ff6b6b);
+        margin: 2rem 0;
+        border-radius: 2px;
+    }
+
+    .subtitle {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.25rem;
+        color: #000;
+        font-style: italic;
+        max-width: 600px;
+        line-height: 1.6;
+        margin-bottom: 4rem;
+
+        @media screen and (max-width: 699px) {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .coming-soon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .big-text {
+        font-family: 'Antonio', sans-serif;
+        font-size: 6rem;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: -0.05ch;
+        line-height: 1;
+
+        @media screen and (max-width: 999px) {
+            font-size: 4rem;
+        }
+
+        @media screen and (max-width: 699px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .info-text {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.1rem;
+        color: #333;
+        max-width: 500px;
+        line-height: 1.6;
+
+        @media screen and (max-width: 699px) {
+            font-size: 1rem;
+        }
+    }
+
+    .intro-bg {
+        user-select: none;
+        pointer-events: none;
+        overflow-y: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        --heading-font-size: 11vw;
+        font-size: calc(1.4 * var(--heading-font-size));
+        white-space: nowrap;
+        font-family: 'Antonio', sans-serif;
+        letter-spacing: -0.18ch;
+        text-transform: uppercase;
+        z-index: 0;
+
+        .rail {
+            position: absolute;
+            height: calc(1.4 * var(--heading-font-size));
+            line-height: 0.8;
+        }
+
+        .rail:nth-child(1) {
+            color: #dadada;
+            top: 20%;
+            animation: 140s infinite linear marquee;
+        }
+
+        .rail:nth-child(2) {
+            color: #dadada;
+            top: 60%;
+            animation: 120s infinite linear marquee;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media screen and (max-width: 999px) {
+            --heading-font-size: 20vw;
+        }
+    }
+}

@@ -1,0 +1,175 @@
+.registerPage {
+    min-height: 100vh;
+    padding-top: 8rem; // Clear the fixed navbar
+    padding-bottom: 4rem;
+    // background-color: #050505; // Dark background removed
+    color: #333;
+
+    .pageHeader {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+        z-index: 2;
+        overflow: hidden; // Contain the animation
+        padding: 2rem 0; // Add padding to define height for animation
+
+        .intro-bg {
+            user-select: none;
+            pointer-events: none;
+            overflow: hidden;
+            position: absolute; // Changed from fixed
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; // Cover header only
+            z-index: 0; // Behind text
+
+            --heading-font-size: 10vw;
+            font-size: var(--heading-font-size);
+            white-space: nowrap;
+            font-family: 'Antonio', sans-serif;
+            text-transform: uppercase;
+            opacity: 0.8;
+
+            .rail {
+                position: absolute;
+                height: calc(1.4 * var(--heading-font-size));
+                line-height: 0.8;
+                white-space: nowrap;
+            }
+
+            .rail {
+                top: 35%;
+                margin-top: calc(-0.7 * var(--heading-font-size));
+                animation: marquee 120s infinite linear;
+                color: #dadada;
+            }
+
+            @media (max-width: 768px) {
+                --heading-font-size: 20vw;
+            }
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        h2 {
+            position: relative; // Ensure it's above bg
+            z-index: 2;
+            font-family: 'Antonio', sans-serif;
+            font-size: 10rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            color: var(--primary);
+
+            @media (max-width: 768px) {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    .eventsGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 0 2rem;
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+            gap: 1rem; // Smaller gap on mobile
+            padding: 0 1rem;
+        }
+    }
+
+    .eventCard {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #111;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        aspect-ratio: 3/4; // Portrait poster format
+
+        // Default (Large screens): 5 items per row
+        // 4 gaps of 1.5rem = 6rem total gap width
+        width: calc((100% - 6rem) / 5);
+
+        @media (max-width: 1024px) {
+            width: calc((100% - 3rem) / 3); // 3 items
+        }
+
+        @media (max-width: 768px) {
+            width: calc((100% - 1rem) / 2); // 2 items
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+            .eventImage {
+                transform: scale(1.05);
+            }
+
+            .eventOverlay {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2) 50%, transparent);
+            }
+        }
+
+        .imageWrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .eventImage {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        .eventOverlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0) 40%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+
+            @media (max-width: 768px) {
+                padding: 0.75rem;
+            }
+        }
+
+        .eventName {
+            font-family: 'Antonio', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            line-height: 1.1;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem; // Smaller font for mobile 2-col layout
+            }
+        }
+    }
+}

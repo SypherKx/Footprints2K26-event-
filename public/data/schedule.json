@@ -1,0 +1,230 @@
+{
+  "eventDates": "Feb 16-25",
+  "year": "2K26",
+  "days": [
+    {
+      "id": 0,
+      "label": "Wed",
+      "fullName": "Wednesday",
+      "date": "Feb 18",
+      "events": [
+        {
+          "id": "day1_event1",
+          "title": "Badminton",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel A & C / Girls: Girls-Hostel C",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event2",
+          "title": "Tug Of War",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event3",
+          "title": "Table Tennis",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel E / Girls: Girls-Hostel C",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event4",
+          "title": "Carrom",
+          "time": "3:05 PM",
+          "venue": "Urban Vadapao Outlet",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event5",
+          "title": "Chess",
+          "time": "3:05 PM",
+          "venue": "Brio Cafe",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event6",
+          "title": "Basketball",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys Basketball Court / Girls: Girls Basketball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event7",
+          "title": "Sprint (100M)",
+          "time": "3:05 PM",
+          "venue": "AA-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event8",
+          "title": "Kabaddi",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Thu",
+      "fullName": "Thursday",
+      "date": "Feb 19",
+      "events": [
+        {
+          "id": "day2_event1",
+          "title": "Badminton",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel A & C / Girls: Girls-Hostel C",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event2",
+          "title": "Table Tennis",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel E",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event3",
+          "title": "Chess",
+          "time": "3:05 PM",
+          "venue": "Brio Cafe",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event4",
+          "title": "Carrom",
+          "time": "3:05 PM",
+          "venue": "Urban Vadapao Outlet",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event5",
+          "title": "Basketball",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys Basketball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event6",
+          "title": "Football",
+          "time": "3:05 PM",
+          "venue": "AA-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event7",
+          "title": "Volleyball",
+          "time": "3:05 PM",
+          "venue": "Boys Hostel-C Volleyball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event8",
+          "title": "Kabaddi",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event9",
+          "title": "Girls Kho-Kho",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Fri",
+      "fullName": "Friday",
+      "date": "Feb 20",
+      "events": [
+        {
+          "id": "day3_event1",
+          "title": "Badminton",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel A & C / Girls: Girls-Hostel C",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event2",
+          "title": "Chess",
+          "time": "3:05 PM",
+          "venue": "Brio Cafe",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event3",
+          "title": "Carrom",
+          "time": "3:05 PM",
+          "venue": "Urban Vadapao Outlet",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event4",
+          "title": "Basketball",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys Basketball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event5",
+          "title": "Football",
+          "time": "3:05 PM",
+          "venue": "AA-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event6",
+          "title": "Volleyball",
+          "time": "3:05 PM",
+          "venue": "Boys Hostel-C Volleyball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event7",
+          "title": "Kabaddi",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event8",
+          "title": "Boys Kho-Kho",
+          "time": "3:05 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    }
+  ]
+}

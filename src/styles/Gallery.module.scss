@@ -1,0 +1,184 @@
+.events {
+    --list-width: 100%;
+    --li-title-width: 100%;
+    --li-venue-width: 100%;
+    --li-time-width: 100%;
+
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-width: 699px) {
+            height: auto; // Allow height to adjust content
+            min-height: 50vh;
+        }
+
+        .gallery-heading {
+            font-size: 15vw;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20vw; // Ensure it fits evenly
+                margin-top: 4rem;
+            }
+        }
+
+        .gallery-subtitle {
+            font-family: 'Antonio', sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333; // Dark text for visibility
+            text-align: center;
+            max-width: 800px;
+            margin-top: 0.5rem;
+            z-index: 10;
+            line-height: 1.2;
+            font-weight: 400;
+
+            @media screen and (max-width: 768px) {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .header-subtitle {
+        color: var(--primary);
+        font-family: 'Antonio', sans-serif;
+        letter-spacing: -0.15ch;
+        line-height: 1;
+        text-transform: uppercase;
+
+        >h2 {
+            font-size: 8.5vw;
+        }
+
+        >div {
+            font-size: 2rem;
+        }
+
+        @media screen and (max-width: 999px) {
+            >h2 {
+                font-size: 12vw;
+            }
+        }
+
+        @media screen and (max-width: 699px) {
+            >h2 {
+                font-size: 16vw;
+            }
+        }
+    }
+
+    .main-content {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .h1 {
+
+                color: var(--primary);
+                font-family: 'Antonio', sans-serif;
+                letter-spacing: -0.15ch;
+                line-height: 1;
+                height: 20vh;
+                text-align: center;
+                font-size: 5.5vw;
+
+            }
+
+
+
+
+        }
+
+
+
+
+    }
+}
+
+.Video {
+    .container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 50vh;
+
+        .responsive-iframe {
+            left: 15%;
+            top: 18%;
+            height: 60%;
+            width: 90%;
+            position: absolute;
+        }
+
+        @media screen and (max-width: 700px) {
+
+            .responsive-iframe {
+                height: 60%;
+                width: 90%;
+
+            }
+        }
+    }
+}
+
+.intro-bg {
+    user-select: none;
+    pointer-events: none;
+    overflow-y: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --heading-font-size: 11vw;
+    font-size: calc(1.4 * var(--heading-font-size));
+    white-space: nowrap;
+    font-family: 'Antonio', sans-serif;
+    letter-spacing: -0.18ch;
+    text-transform: uppercase;
+    z-index: 0;
+    // opacity: 0.15; // Removed opacity as Home doesn't use it on the container
+
+    .rail {
+        position: absolute;
+        height: calc(1.4 * var(--heading-font-size));
+        line-height: 0.8;
+        opacity: 0.8; // Reduced transparency by 20% as requested
+    }
+
+    // Match Home colors
+    .rail:nth-child(1) {
+        color: #dadada;
+        top: 20%;
+        animation: 140s infinite linear marquee;
+    }
+
+    .rail:nth-child(2) {
+        color: #dadada;
+        top: 60%;
+        animation: 120s infinite linear marquee;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media screen and (max-width: 999px) {
+        --heading-font-size: 20vw;
+    }
+}
