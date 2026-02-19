@@ -33,7 +33,7 @@ export default function SecurityWrapper({ children }) {
                 "%c⚠️WARNING⚠️!",
                 "color: red; font-size: 50px; font-weight: bold;",
             )
-            console.log(
+            // console.log(
                 "%cThis is a browser feature intended for Ignitia developers. If someone told you to copy-paste something here to enable a free feature or 'hack' someone's account, it is a scam and your Ignitia Account may be compromised.",
                 "font-size: 18px;",
             )
