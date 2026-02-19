@@ -160,7 +160,7 @@ const Hero = () => {
     // Attempt to play video on mount
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
-        console.log("Autoplay prevented:", error);
+        // console.log("Autoplay prevented:", error);
       });
     }
 
