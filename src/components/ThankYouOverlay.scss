@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════
+   ThankYouOverlay – Grand Farewell Screen v2
+   No boxes, no borders — raw, cinematic, creative.
+   Primary: #974B60  |  Accents: rose & gold
+   ═══════════════════════════════════════════════════ */
+
+.ty-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ── background video ── */
+.ty-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ty-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ty-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(10, 5, 8, 0.85) 40%,
+    rgba(10, 5, 8, 0.92) 100%
+  );
+}
+
+/* ── particles ── */
+.ty-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── content ── */
+.ty-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 680px;
+  width: 100%;
+  gap: 0;
+}
+
+/* ── PSIT logo ── */
+.ty-psit {
+  width: 56px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 16px rgba(151, 75, 96, 0.4));
+}
+
+/* ── Footprints logo ── */
+.ty-fp-logo {
+  width: min(82vw, 400px);
+  height: auto;
+  margin-bottom: 0.2rem;
+  filter: drop-shadow(0 0 24px rgba(151, 75, 96, 0.3));
+}
+
+/* ── 2K26 mark ── */
+.ty-mark {
+  width: min(30vw, 120px);
+  height: auto;
+  margin-bottom: 1.8rem;
+  filter: drop-shadow(0 0 16px rgba(212, 160, 90, 0.35));
+}
+
+/* ── divider line ── */
+.ty-line {
+  width: 80px;
+  height: 1.5px;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, transparent, #974B60, transparent);
+}
+
+/* ── THANK YOU title ── */
+.ty-title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 200;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  letter-spacing: -0.03ch;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #eee;
+  text-shadow: 0 0 50px rgba(151, 75, 96, 0.25);
+}
+
+/* ── message paragraph ── */
+.ty-msg {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  color: rgba(238, 238, 238, 0.6);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 3rem;
+
+  strong {
+    color: #c97a90;
+    font-weight: 700;
+  }
+}
+
+/* ── 2K27 section — NO box, just raw type ── */
+.ty-next {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 3rem;
+}
+
+.ty-next__pre {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(238, 238, 238, 0.35);
+}
+
+.ty-next__year {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: clamp(5rem, 18vw, 9rem);
+  line-height: 1;
+  letter-spacing: -0.04ch;
+  background: linear-gradient(
+    135deg,
+    #c97a90 0%,
+    #d4a05a 40%,
+    #c97a90 70%,
+    #d4a05a 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.ty-next__tag {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(238, 238, 238, 0.45);
+  margin-top: 0.3rem;
+}
+
+/* ── footer ── */
+.ty-copy {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(238, 238, 238, 0.2);
+}
+
+/* ── responsive ── */
+@media (max-width: 480px) {
+  .ty-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .ty-psit {
+    width: 44px;
+  }
+
+  .ty-msg {
+    margin-bottom: 2rem;
+  }
+
+  .ty-next {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "eventDates": "Feb 16-25",
+  "year": "2K26",
+  "days": [
+    {
+      "id": 0,
+      "label": "Sat",
+      "fullName": "Saturday",
+      "date": "Feb 21",
+      "events": [
+        {
+          "id": "day1_event1",
+          "title": "Football (2nd Semifinal)",
+          "time": "10:00 AM",
+          "venue": "AA-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event2",
+          "title": "Kho-Kho (Boys - Quarter Finals, Girls - Semi Finals)",
+          "time": "1:30 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event3",
+          "title": "Volleyball (Boys) - Quarter & Semi Finals",
+          "time": "1:30 PM",
+          "venue": "Boys Hostel-C Volleyball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event4",
+          "title": "Kabaddi",
+          "time": "1:45 PM",
+          "venue": "R-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event5",
+          "title": "Football (Finals & 3rd Position)",
+          "time": "3:05 PM",
+          "venue": "AA-Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event6",
+          "title": "Badminton",
+          "time": "3:05 PM",
+          "venue": "Boys: Boys-Hostel A & C / Girls: Girls-Hostel C",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day1_event7",
+          "title": "Basketball",
+          "time": "4:00 PM",
+          "venue": "Boys: Boys Basketball Court",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Mon",
+      "fullName": "Monday",
+      "date": "Feb 23",
+      "events": [
+        {
+          "id": "day2_event1",
+          "title": "800m Race",
+          "time": "10:45 AM",
+          "venue": "R Block Ground (Participants must report at R Block Ground)",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event2",
+          "title": "Kho-Kho",
+          "time": "10:45 AM",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event3",
+          "title": "Kabaddi (Semi Finals & Finals)",
+          "time": "3:05 PM",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event4",
+          "title": "Badminton",
+          "time": "3:05 PM",
+          "venue": "Boys Hostel A",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event5",
+          "title": "Kho-Kho Finals (Boys & Girls)",
+          "time": "3:15 PM",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event6",
+          "title": "Girls Volleyball",
+          "time": "5:00 PM Onwards",
+          "venue": "Girls Volleyball Court, R Block",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day2_event7",
+          "title": "Throws Events",
+          "time": "5:00 PM Onwards",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Tue",
+      "fullName": "Tuesday (Final Day)",
+      "date": "Feb 24",
+      "events": [
+        {
+          "id": "day3_event1",
+          "title": "Jumps (High Jump & Long Jump – Boys & Girls)",
+          "time": "1:30 PM",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event2",
+          "title": "Slow Cycle Race",
+          "time": "1:30 PM",
+          "venue": "In Front of J Block",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event3",
+          "title": "Volleyball – Finals",
+          "time": "3:05 PM",
+          "venue": "Boys Volleyball Court",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event4",
+          "title": "Badminton – Semi Finals & Finals",
+          "time": "3:15 PM",
+          "venue": "Boys Hostel A",
+          "type": "Sport",
+          "category": "Open"
+        },
+        {
+          "id": "day3_event5",
+          "title": "800m Finals",
+          "time": "4:45 PM",
+          "venue": "R Block Ground",
+          "type": "Sport",
+          "category": "Open"
+        }
+      ]
+    }
+  ]
+}
